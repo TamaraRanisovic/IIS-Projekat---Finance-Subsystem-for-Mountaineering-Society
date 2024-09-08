@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registracija</title>
+  <link rel = "stylesheet" type = "text/css" >
+  <script src="jquery.min.js"></script>
+
+  <script src="jquery.validate.min.js"></script>
+
+  <script src="kreiranjeture.js"></script>
+  <style>
+    body {
+      background-color: #3EEA58; /* Light green background */
+      font-family: Arial, sans-serif;
+
+    }
+    .container {
+      max-width: 400px; /* Adjust as needed */
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px solid #006600; /* Dark green border */
+      border-radius: 10px;
+      background-color: #ffffff; /* White background */
+    }
+    .login-form {
+      text-align: center;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="submit"],
+    input[type="radio"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #14B82C; /* Dark green submit button */
+      color: #ffffff; /* White text */
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0f8f23; /* Darker green on hover */
+    }
+
+    /* Flexbox styling for radio buttons */
+    .radio-group {
+      display: flex;
+      justify-content: center;
+    }
+    .radio-group label {
+      margin: 0 10px;
+    }
+
+    
+    button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+    button#odustani {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        button#odustani:hover {
+            background-color: #c82333;
+        }
+
+        button#kreiraj {
+            background-color: #298a8a;
+            color: #fff;
+        }
+
+        button#kreiraj:hover {
+            background-color: #298a8a;
+        }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="login-form">
+    <h1>Kreiranje ture</h1>
+    <form id="kreirajnovuturu">
+      <label for="nazivture">Naziv ture:</label>
+      <input id="nazivture" type="text" name="nazivture" placeholder="Unesite naziv ture" required><br><br>
+
+      <label for="kotizacija">Kotizacija:</label>
+      <input id="kotizacija" type="text" name="kotizacija" placeholder="Unesite vrednost kotizacije" required><br><br>
+
+      <label for="tezinasetnje">Težina šetnje:</label>
+      <input id="tezinasetnje" type="text" name="tezinasetnje" placeholder="Unesite težinu šetnje" required><br><br>
+
+      <label for="brojucesnika">Maksimalan broj učesnika:</label>
+      <input id="brojucesnika" type="text" name="brojucesnika" placeholder="Unesite maksimalan broj učesnika" required><br><br>
+
+      <label for="time">Vreme polaska:</label>
+        <style>
+            select {
+              font-size: 14px; 
+              padding: 10px; 
+              width: 150px;
+            }
+
+        </style>
+          <select  id="time" name="time">
+        <option value="08:00">08:00</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+          </select>
+          <br><br>
+
+
+      <label for="person">Odaberi vodiča:</label>
+        <style>
+            select {
+              font-size: 14px; 
+              padding: 10px; 
+              width: 150px;
+            }
+        </style>
+            <select id="person" name="person">
+              <option value="Vukasin">Vukašin</option>
+              <option value="Vule">Vule</option>
+          </select>
+          <br><br>
+
+      <label for="datumodrzavanja">Datum održavanja:</label>
+      <input id="datumodrzavanja" type="date" name="datumodrzavanja" required><br><br>
+
+      <label for="rokzaprijavu">Rok za prijavu:</label>
+      <input id="rokzaprijavu" type="date" name="rokzaprijavu" required><br><br>
+
+      <label for="rokzauplatu">Rok za uplatu:</label>
+      <input id="rokzauplatu" type="date" name="rokzauplatu" required><br><br>
+
+      <br>
+<!--      <button type="button" id="logout">Odjavi se</button>  -->
+      <button type="button" id="odustani">Odustani</button>   <button type="button" id="kreiraj">Kreiraj novu turu</button>
+<!--      <input type="submit" value="Odustani">      
+      <input type="submit" value="Kreiraj novu turu"> -->
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

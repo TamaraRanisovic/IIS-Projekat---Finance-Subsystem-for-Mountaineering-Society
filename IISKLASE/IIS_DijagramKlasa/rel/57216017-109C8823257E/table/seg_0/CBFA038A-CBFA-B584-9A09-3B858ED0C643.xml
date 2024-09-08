@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CBFA038A-CBFA-B584-9A09-3B858ED0C643" name="KORISNIK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>E162795F-748D-7E22-E053-AE7398DB331E</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Ime" id="40E54AB7-F9E4-1CE4-5C82-EC5B4447B232">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>0805E2FD-B8CD-C89E-51E6-45590653F229</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6CBC989A-292B-BEE7-230E-AD66A4C57E89</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Prezime" id="51B24E50-5834-CDF9-AAFF-43D00DBB57EA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>9BBDED5F-9839-2065-221A-9EB8CA879800</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B331DE3D-4996-ECAB-2840-EC42254B3003</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Uloga" id="FC713159-66A4-9E00-5B95-60812E15AA31">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>B652478D-87D2-B083-2B74-D6A1BAFAAF14</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2C8FE299-0BCF-6312-23D2-6C610D50689C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Datum_rodjenja" id="2796BF82-45A2-C079-8A58-203F4965DB7B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>8C4B6775-8599-30D8-C5C1-83518A43627A</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>1E9BAA01-AE21-99EE-B153-E7CBC482F5B8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="8F90DED0-D943-1A87-830F-B36A1C0C0B5A">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>C001F2EC-3D1D-3FA3-1CA0-061C2017CDC8</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2B14AD4C-F1C6-34C1-E706-614698C49C8D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Br_telefona" id="F2D02046-A139-E6B8-E4BC-D67C1B5F8E5D">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>07005751-3F99-139E-27FF-E69EA2B76922</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>D43CD3DD-4A00-68A5-B04D-6D546FA0453A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID" id="2D32B066-48A1-2ED5-E966-0CC0F2C45C7E">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>72C1A31B-AD82-618C-185B-EFF70B86F43A</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9279814A-FEE3-93E2-E153-556790817056" name="KORISNIK_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D32B066-48A1-2ED5-E966-0CC0F2C45C7E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB327661-44CD-524F-28CA-0737AC2C3567" name="cini_model_prihod">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PLAN_PRIHOD_ID_plan_prihod" id="EF665B79-C9AE-7FDD-71D8-A6FF88198DBE">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E35080A-7AC9-C7FE-E063-E95C93340573" referredColumn="6C022DD7-EA21-7676-0065-CF95D1AFFE3A"/>
+</associations>
+</Column>
+<Column name="MODEL_BUDZETA_ID_model_budzet" id="64ADC7A3-3730-4A25-ECF4-735C824D5EDB">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D04AAA35-EC92-D4CF-C256-F27DBBF4DCFA" referredColumn="8B4D58CC-3073-DAAF-0871-75204F1C9EAE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DA89F3BA-83BE-162A-B7F3-1DC3ACC7F1F3" name="cini_model_prihod_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF665B79-C9AE-7FDD-71D8-A6FF88198DBE"/>
+<colUsage columnID="64ADC7A3-3730-4A25-ECF4-735C824D5EDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="556175A1-CC47-074F-49C3-58D9F7AF0D0D" name="cini_model_prihod_PLAN_PRIHOD_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>51B61346-19A5-507C-AA77-1D316890C9E1</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF665B79-C9AE-7FDD-71D8-A6FF88198DBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90BC173D-94A3-A1D0-80F3-CC2F934A7AA0" name="cini_model_prihod_MODEL_BUDZETA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>51B61346-19A5-507C-AA77-1D316890C9E1</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64ADC7A3-3730-4A25-ECF4-735C824D5EDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

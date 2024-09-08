@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2BDC08D4-482B-89D9-D80A-8EB6FD626966" containerWithKeyObject="8C1B17D9-4760-01AF-DC64-D5FEA29C1E10" localFKIndex="97F65BC7-C139-9ED6-1110-D934C57ADD73" name="ucestvuje_tura_TURA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>1FB73419-9165-8CF3-A18F-B79631B6BA83</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>TURA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>184219F9-2F05-7B2E-D071-ED645123D963</referredTableID>
+<keyObject>55AA835D-4AED-2178-01C1-4EEA07DAE68E</keyObject>
+<referredKeyID>55AA835D-4AED-2178-01C1-4EEA07DAE68E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Tura</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

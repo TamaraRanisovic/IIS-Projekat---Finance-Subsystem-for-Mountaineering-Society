@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E86DC696-1D65-F866-065F-A2A8557DDE65" name="MENADZER_FINANS">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>679AE108-5EEE-7851-29B7-A0BAA00AFEAF</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RASP_SREDSTVA_ID_rs" id="8B17DD0B-61DF-4C62-2F9C-DE83B979E0BA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>63582120-B4E0-1852-D97C-43BB6827052E</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7071F99-BA1D-B057-E14D-3560470DDF22" referredColumn="FD642893-0D4D-AC41-BBD6-6B9517056908"/>
+</associations>
+</Column>
+<Column name="ID" id="E8637394-A45A-AB65-8A54-F1537600FE43">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>72C1A31B-AD82-618C-185B-EFF70B86F43A</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A407C7C-6943-E9BF-9EE8-0B2B46E15038" referredColumn="2BF13401-9F17-E19B-3E9E-524B58C20E19"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE2BDE38-6AF8-0263-EEF4-317816CA4B6C" name="MENADZER_FINANS_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8637394-A45A-AB65-8A54-F1537600FE43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D60D77C-0D50-18D1-056D-E0A82F3FAC3B" name="MENADZER_FINANS__IDX">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>198D581B-601F-7126-7926-FF7EC2E997D3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="8B17DD0B-61DF-4C62-2F9C-DE83B979E0BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8892853-7D92-6414-8E0F-00D888736B70" name="MENADZER_FINANS_MENADZER_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>C1A0606B-0610-982F-37E2-0BAC755DCF59</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8637394-A45A-AB65-8A54-F1537600FE43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D4FF66E-0B12-B74F-FD55-2A4607AFF539" name="MENADZER_FINANS_RASP_SREDSTVA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>198D581B-601F-7126-7926-FF7EC2E997D3</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B17DD0B-61DF-4C62-2F9C-DE83B979E0BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

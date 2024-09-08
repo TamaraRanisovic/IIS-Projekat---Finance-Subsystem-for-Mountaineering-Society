@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="497554F3-F6F6-1E5C-614E-DA03A22C7B07" name="ADMIN_SISTEMA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>F5E9AE9A-F95B-E35D-CE27-A458367E540B</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="CEFDC462-C5B0-8C8B-132F-A7B72A9FEC35">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>72C1A31B-AD82-618C-185B-EFF70B86F43A</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05E687AC-E72D-73AB-8F57-A3E68503A229" referredColumn="2D32B066-48A1-2ED5-E966-0CC0F2C45C7E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D57E16C6-5E7E-C7FE-49B6-869345CE0D7C" name="ADMIN_SISTEMA_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CEFDC462-C5B0-8C8B-132F-A7B72A9FEC35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9480A27A-2E13-2CC1-3921-B9EB39F72530" name="ADMIN_SISTEMA_KORISNIK_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>2A9CD850-4CA4-7204-C307-69AC2595B614</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CEFDC462-C5B0-8C8B-132F-A7B72A9FEC35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

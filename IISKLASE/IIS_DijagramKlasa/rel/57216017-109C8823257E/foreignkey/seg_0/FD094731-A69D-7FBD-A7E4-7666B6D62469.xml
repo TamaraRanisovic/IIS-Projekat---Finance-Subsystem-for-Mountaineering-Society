@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FD094731-A69D-7FBD-A7E4-7666B6D62469" containerWithKeyObject="D0FF3267-7CF3-2A24-BBB4-78BA6F0111B4" localFKIndex="72F7C370-0645-5CAB-71E2-99BCB12DB881" name="CLAN_DRUSTVA_KORISNIK_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>BAB90C2A-C92F-A00D-4FCE-0175C05AE8CE</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>KORISNIK</referredTableLongName>
+<arc>9F0B57B1-40F2-2F00-C145-7502A307500C</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CBFA038A-CBFA-B584-9A09-3B858ED0C643</referredTableID>
+<keyObject>9279814A-FEE3-93E2-E153-556790817056</keyObject>
+<referredKeyID>9279814A-FEE3-93E2-E153-556790817056</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

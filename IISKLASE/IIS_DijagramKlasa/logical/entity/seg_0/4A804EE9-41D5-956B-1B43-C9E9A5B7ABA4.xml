@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4A804EE9-41D5-956B-1B43-C9E9A5B7ABA4" name="PLAN_RASHOD">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:44:37 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_plan_rashod" id="95678F41-C3BE-D925-27DC-0D8B31006D83">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:05 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="KategorijaRashoda" id="6343F8D0-A2DB-CA6D-88CF-3EB1BEA8207B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:17 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>89B2065F-58DF-A40B-419C-1AAB506A6515</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Opis" id="CC82301F-EA0A-9EB7-99AD-DB8EDCC7E367">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:25 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>FD6054F9-1EB1-F02E-738F-914B888D89A2</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Osnovna_cena" id="EE4EB884-E147-5711-4D86-6EFA29986A6A">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:31 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kolicina" id="6EE8AE5D-C618-352F-AD0E-39684C2B0904">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:42 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Proritet" id="28957125-8D1D-7D93-E607-8000FD1A625F">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:50 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>9F707B54-8C67-5B9A-4358-398676F7ED59</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Period" id="D0A7A22A-E6FB-56F7-3416-A8AB0B7A08B0">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:59 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>9C2F30E3-C77B-DD7C-C10E-DC8DBBBEF073</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2228BC8C-76C0-71B5-45BF-7E5DDBD0D98B" name="PLAN_RASHOD PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:45:15 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>95678F41-C3BE-D925-27DC-0D8B31006D83</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

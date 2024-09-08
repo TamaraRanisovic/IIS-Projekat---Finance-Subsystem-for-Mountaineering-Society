@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ocenjuje" directorySegmentName="seg_0" id="CCBDE3A6-4AE7-BF9F-857A-5F68A336169B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 11:20:02 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>CF1FFD6B-4F06-DFE8-9218-4C62615253AF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>39B82FF5-A94A-DA4E-1BE9-B80826ACFEDE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

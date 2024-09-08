@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="679AE108-5EEE-7851-29B7-A0BAA00AFEAF" name="MENADZER_FINANS">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-03 22:41:01 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>33DFF2AF-C9AA-7920-76D7-343FECBDA1A6</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_rs" id="63582120-B4E0-1852-D97C-43BB6827052E">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:51:58 UTC</createdTime>
+<generatorID>198D581B-601F-7126-7926-FF7EC2E997D3</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<referedAttribute>43A82D4C-2AB1-72C4-6B55-E0BD194745C1</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0490D43E-2AD7-F005-F877-D8E4509CD0BB" name="PRIHOD">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:55:15 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Opis" id="806DF425-14E0-73E8-084C-53CFEC9D4908">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:55:21 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>FD6054F9-1EB1-F02E-738F-914B888D89A2</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Iznos" id="A3140E11-0FED-DDBB-BF0C-03B9EAA77FC2">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:55:29 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DatumVreme" id="0316AFEE-C897-CB6F-8B1F-891BACAF2377">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:55:41 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>49468DFA-D700-3D3B-B27A-9356B01CF0FF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IzvorPrihoda" id="3A15AA7A-A68D-79BF-D0E8-278B792E89AF">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:56:09 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>FD6054F9-1EB1-F02E-738F-914B888D89A2</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="KategorijaPrihoda" id="9D4A3B8E-4A35-983A-2C4C-111E138ADE1D">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:56:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>9903E2F1-4DF6-A12E-6A0A-4787186A7004</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Prihod" id="C00CA5E8-4ED0-E46A-C96E-17E89C3CB297">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:56:45 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="E6F9D972-A4BE-DA27-91BA-960391AA73F0">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 11:03:33 UTC</createdTime>
+<generatorID>7FF02C0C-3F6E-F25F-C2CC-E2BB9C7AD65C</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<referedAttribute>72C1A31B-AD82-618C-185B-EFF70B86F43A</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B401CE38-9B13-3D5D-5AF9-068D353683EA" name="PRIHOD PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:57:00 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C00CA5E8-4ED0-E46A-C96E-17E89C3CB297</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

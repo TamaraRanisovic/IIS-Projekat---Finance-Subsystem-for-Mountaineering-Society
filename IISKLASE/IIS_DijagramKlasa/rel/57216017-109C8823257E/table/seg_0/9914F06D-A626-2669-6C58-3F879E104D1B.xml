@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9914F06D-A626-2669-6C58-3F879E104D1B" name="ucestvuje_takm">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLAN_DRUSTVA_ID" id="8BD91DCE-DCE5-1052-B8BD-35C3D1CB3407">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E00C4635-3CFB-1DDA-EE0B-194C61C6B821" referredColumn="86CADB20-0DF4-23AA-6FE1-EEE128D7BAA3"/>
+</associations>
+</Column>
+<Column name="TAKMICENJE_ID_TAKMICENJE" id="EF184894-6952-38A3-762F-96856D6F2A14">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B7E5D52-7EB8-6A3F-D6DB-ED2486E1D799" referredColumn="D5B3761A-D155-301A-DB9F-67BCAB0149D1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6E81F75-A526-0AA1-D154-725E626D2608" name="ucestvuje_takm_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BD91DCE-DCE5-1052-B8BD-35C3D1CB3407"/>
+<colUsage columnID="EF184894-6952-38A3-762F-96856D6F2A14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B18C2612-38F5-5EDC-DDC7-A6880E240548" name="ucestvuje_takm_CLAN_DRUSTVA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>EA8B63DF-4E42-500F-242B-242420A38520</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BD91DCE-DCE5-1052-B8BD-35C3D1CB3407"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FEC5BC2D-7BCB-C852-1FA8-B6B83EC31C2E" name="ucestvuje_takm_TAKMICENJE_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>EA8B63DF-4E42-500F-242B-242420A38520</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF184894-6952-38A3-762F-96856D6F2A14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

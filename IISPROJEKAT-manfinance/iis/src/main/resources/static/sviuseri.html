@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Svi korisnici</title>
+    <link rel = "stylesheet" type = "text/css" >
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+
+    <script src ="sviuseri.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3EEA58;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #izmenikorisnika {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #14B82C;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #izmenikorisnika:hover {
+            background-color: #0f8f23;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Korisnici</h1>
+
+    <table id="sviuseri">
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Broj telefona</th>
+            <th>Email</th>
+            <th>Datum rodjenja</th>
+            <th>Uloga</th>
+
+        </tr>
+    </table>
+
+    <button id="izmenikorisnika">Izmeni odabranog korisnika</button>
+</div>
+</body>
+</html>

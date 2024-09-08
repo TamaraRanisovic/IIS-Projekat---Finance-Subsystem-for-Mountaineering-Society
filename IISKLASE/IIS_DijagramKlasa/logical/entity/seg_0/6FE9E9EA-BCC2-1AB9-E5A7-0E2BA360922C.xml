@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6FE9E9EA-BCC2-1AB9-E5A7-0E2BA360922C" name="RASP_SREDSTVA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:45:43 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="iznos" id="26C87A20-0E5B-142B-F19B-697EBC0F4B6A">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:46:03 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum_izmene" id="88DCECD6-0E8E-1493-8E05-73298E4CA32F">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:46:40 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>49468DFA-D700-3D3B-B27A-9356B01CF0FF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_rs" id="43A82D4C-2AB1-72C4-6B55-E0BD194745C1">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:46:56 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="8AAEE98D-55C5-E0A6-0F29-8BA80462ADE2">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:51:14 UTC</createdTime>
+<generatorID>198D581B-601F-7126-7926-FF7EC2E997D3</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<referedAttribute>72C1A31B-AD82-618C-185B-EFF70B86F43A</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="74E48689-CE99-C959-4547-CD6ADF01CC46" name="RASP_SREDSTVA PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:47:05 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>43A82D4C-2AB1-72C4-6B55-E0BD194745C1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

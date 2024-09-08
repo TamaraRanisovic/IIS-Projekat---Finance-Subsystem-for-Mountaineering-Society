@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="kreira_takm" directorySegmentName="seg_0" id="876487F8-5849-0265-77AA-EEC30B30EF53">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 10:52:29 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<sourcePk>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A88BB73B-ED3F-7354-B7BE-17588228E704</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2B17C3E4-0CAB-94BF-16FD-F96B4185FA0C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

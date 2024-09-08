@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E38A5834-E8EB-4778-D7C9-5BD1C3AE6EE3" name="MODEL_BUDZETA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:48:40 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_model_budzet" id="6C02F420-B5FA-2C96-C85A-DB1DC582867F">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:48:55 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Vremenski_period" id="4B2D07BE-5374-4DB0-2F3B-F0C7AC1F6BE0">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:56:38 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>BB27554A-8582-67E8-11A8-E5A1A807DBB2</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Zeljena_dobit" id="9D6D8EA9-8403-89AE-6BCC-A8D178F14DA5">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:56:54 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ocekivana_dobit" id="9BD62785-5209-3D7C-3882-F90E5404EDC8">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:57:09 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID" id="3A33B448-5576-8ACD-6EC8-B0BA2207DDAF">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:05:53 UTC</createdTime>
+<generatorID>127829E9-15F0-396C-4692-D97325E2A797</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referedAttribute>72C1A31B-AD82-618C-185B-EFF70B86F43A</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Aktuelni" id="F0C78ABA-18F5-FB16-8245-734D86416809">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:08:18 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Pocetni_datum" id="C9F9602E-DCA9-B2BD-1D64-CCD0A61E87FA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-30 15:35:41 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>1E9BAA01-AE21-99EE-B153-E7CBC482F5B8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2804858E-6883-6304-5B54-2977DAACEBAC" name="MODEL_BUDZETA PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:49:06 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6C02F420-B5FA-2C96-C85A-DB1DC582867F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

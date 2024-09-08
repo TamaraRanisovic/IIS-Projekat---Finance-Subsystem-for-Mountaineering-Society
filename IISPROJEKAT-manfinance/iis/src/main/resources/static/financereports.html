@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finansijski izveštaji</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="financereports.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+.sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+            height: 100vh; /* Adjusted height to cover the entire viewport */
+
+            overflow-y: auto; /* Add scroll if content exceeds viewport height */
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+        .submenu {
+            display: none;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .sidebar ul ul li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .sidebar ul ul li a {
+            font-size: 16px;
+            margin-left: 20px;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; /* Add scroll if content exceeds viewport height */
+        }
+        .main-content h3 {
+        	text-align: left;
+            margin-bottom: 30px;
+        }
+        .main-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 45px;
+            width: 100%;
+        }
+        .container {
+            margin-left: 32px;
+            margin-right: 32px;
+        	justify-content: center;
+            margin-bottom: 40px; /* Increased margin between tables */
+            text-align: center;
+            font-size: 14px;
+            max-width: 100%; /* Ensure container stretches to full width */
+            overflow-x: auto; /* Add horizontal scroll if content overflows */
+            height: 200px; /* Increased fixed height for the container */
+            max-height: 100%;
+            overflow-y: auto; /* Add vertical scroll if content overflows */
+        }
+        .container h3 {
+            margin-bottom: 10px; /* Reduced margin */
+            font-size: 16px; /* Reduced font size for headings */
+        }
+
+        .report-container {
+          	margin-left: 35px;
+            margin-bottom: 0px;
+            margin-top: 25px;
+            font-size: 18px;
+
+        }
+       table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px; /* Reduced margin */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            table-layout: fixed; /* Ensures the table fits within the container */
+        }
+        .report0-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 150px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .report-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .report2-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100px;
+            margin-left: 0px;
+            margin-right: 15px;
+        }
+      .report3-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+            margin-left: 0px;
+            margin-right: 15px;
+        }
+        .download-report {
+            cursor: pointer;
+            color: #000000;
+            width: 120px;
+            height: 40px;
+			margin-left: 25px;
+            font-weight: bold;
+            background-color: #15F187;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .download-report:hover {
+            background-color: #12DB7A;
+        }
+        #budget-content {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <h2>Planinarsko društvo "Vidikovac"</h2>
+    <ul>
+        <li><a href="financemanager.html">Početna</a></li>
+        <li>
+            <a href="#" class="menu-toggle">Prihodi <i class="fas fa-chevron-down"></i></a>
+            <ul class="submenu">
+                <li><a href="allincomes.html">Pregled svih prihoda</a></li>
+                <li><a href="addincome.html">Unos novog prihoda</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-toggle">Rashodi <i class="fas fa-chevron-down"></i></a>
+            <ul class="submenu">
+                <li><a href="allexpenses.html">Pregled svih rashoda</a></li>
+                <li><a href="addexpense.html">Unos novog rashoda</a></li>
+            </ul>
+        </li>
+        <li><a href="budgetmodel.html">Kreiraj model budžeta</a></li>
+        <li><a href="">Finansijski izveštaji</a></li>
+        <li><a href="besttour.html">Odabir najboljih tura</a></li>
+        <li><a href="profil.html">Vaš profil</a></li>
+        <li><a href="#">Pomoć</a></li>
+        <li><a href="login.html">Odjavi se</a></li>
+    </ul>
+</div>
+
+<div id="main-content" class="main-content">
+    <div class="main-heading">Odaberite finansijski izveštaj</div>
+    <div class="report-container">
+        <h3>Bilans uspeha</h3>
+        <label for="report1" class="report-label">Odaberite tip izveštaja: </label>
+        <select id="report1" name="report1" class="report0-select">
+            <option value="report1_month">mesečni</option>
+            <option value="report1_quarter">kvartalni</option>
+            <option value="report1_year">godišnji</option>
+        </select>
+    </div>
+
+    <div class="report-container">
+        <label for="report1_period1_month" class="report-label">Za vremenski period od: </label>
+        <select id="report1_period1_month" name="report1_period1_month" class="report-select">
+
+        </select>
+        <select id="report1_period1_year" name="report1_period1_year" class="report2-select">
+
+        </select>
+        <label for="report1_period2_month" class="report-label">do: </label>
+        <select id="report1_period2_month" name="report1_period2_month" class="report-select">
+
+        </select>
+        <select id="report1_period2_year" name="report1_period2_year" class="report2-select">
+
+        </select>
+        <button class="download-report" id="downloadBtn1">Preuzmi</button>
+
+    </div>
+
+
+    <div class="report-container">
+        <h3>Novčani tokovi</h3>
+        <label for="report2" class="report-label">Odaberite tip izveštaja: </label>
+        <select id="report2" name="report2" class="report-select">
+            <option value="report2_month">mesečni</option>
+            <option value="report2_quarter">kvartalni</option>
+            <option value="report2_year">godišnji</option>
+        </select>
+    </div>
+
+    <div class="report-container">
+        <label for="report2_period1_month" class="report-label">Za vremenski period od: </label>
+        <select id="report2_period1_month" name="report2_period1_month" class="report-select">
+
+        </select>
+        <select id="report2_period1_year" name="report2_period1_year" class="report2-select">
+
+        </select>
+        <label for="report2_period2_month" class="repor2-label">do: </label>
+        <select id="report2_period2_month" name="report2_period2_month" class="report-select">
+
+        </select>
+        <select id="report2_period2_year" name="report2_period2_year" class="report2-select">
+
+        </select>
+        <button class="download-report" id="downloadBtn2">Preuzmi</button>
+
+    </div>
+
+
+    <div class="report-container">
+        <h3>Model budžeta</h3>
+        <label for="report3" class="report-label">Odaberite model budžeta: </label>
+        <select id="report3" name="report3" class="report3-select">
+            <!-- Options will be populated here -->
+        </select>
+        <button class="download-report" id="downloadBtn3">Preuzmi</button>
+    </div>
+
+
+
+</div>
+
+<div id="budget-content" class="budget-content">
+    <br>
+    <div class="main-heading">Izveštaj za model budžeta</div>
+    <div class="inputs-container">
+        <div class="budget-name-container">
+            <label for="budget-name" class="budget-name-label">Naziv modela budžeta:</label>
+            <div class="budget-name-input-container">
+                <input type="text" id="budget-name" name="budget-name" class="budget-name-input" placeholder="Unesite naziv">
+            </div>
+        </div>
+
+    </div>
+    <div class="inputs-container">
+        <div class="zeljena-dobit-container">
+            <label for="zeljena-dobit" class="zeljena-dobit-label">Željena dobit:</label>
+            <div class="zeljena-dobit-input-container">
+                <input type="text" id="zeljena-dobit" name="zeljena-dobit" class="zeljena-dobit-input" placeholder="Unesite iznos">
+                <span class="zeljena-dobit-unit">RSD</span>
+            </div>
+        </div>
+        <div class="zeljena-dobit-container">
+            <label for="zeljena-dobit" class="zeljena-dobit-label">Očekivana dobit:</label>
+            <div class="zeljena-dobit-input-container">
+                <input type="text" id="ocekivana-dobit" name="ocekivana-dobit" class="zeljena-dobit-input" placeholder="Unesite iznos">
+                <span class="zeljena-dobit-unit">RSD</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="inputs-container">
+
+        <div class="vremenski-period-container">
+            <label for="vremenski-period" class="vremenski-period-label">Vremenski period:</label>
+            <select id="vremenski-period" name="vremenski-period" class="vremenski-period-select">
+                <option value="mesec">mesec</option>
+                <option value="kvartal">kvartal</option>
+                <option value="godina">godina</option>
+            </select>
+        </div>
+    </div>
+    <div class="inputs-container">
+
+        <div class="start-date-container">
+            <label for="start-date" class="start-date-label">Datum početka važenja:</label>
+            <input type="datetime-local" id="start-date" name="start-date" required>
+
+        </div>
+    </div>
+
+    <h3>Planirani prihodi</h3>
+    <div class="container">
+        <table id="financeTable1">
+            <thead>
+            <tr>
+                <th>Kateg. prihoda</th>
+                <th>Opis</th>
+                <th>Osnovna cena (RSD)</th>
+                <th>Količina</th>
+                <th>Prioritet</th>
+                <th>Period</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <h3>Planirani rashodi</h3>
+    <div class="container">
+        <table id="financeTable2">
+            <thead>
+            <tr>
+                <th>Kateg. rashoda</th>
+                <th>Opis</th>
+                <th>Osnovna cena (RSD)</th>
+                <th>Količina</th>
+                <th>Prioritet</th>
+                <th>Period</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Dynamic rows will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="histogram-container">
+        <div>
+            <div id="histogram1-title">Prikaz planiranih prihoda i rashoda po periodu</div>
+            <div id="histogram1"></div>
+        </div>
+        <div>
+            <div id="histogram2-title">Prikaz očekivane dobiti po prioritetima i periodima</div>
+            <div id="histogram2"></div>
+        </div>
+    </div>
+    <div class="new-container">
+        <div class="summary-container">
+            <h3>Rezime planiranih prihoda i rashoda po prioritetima</h3>
+            <table id="summary-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Ukupni Prihodi (RSD)</th>
+                    <th>Ukupni Rashodi (RSD)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>I prioritet</td>
+                    <td id="i-prioritet-income-sum">0</td>
+                    <td id="i-prioritet-expense-sum">0</td>
+                </tr>
+                <tr>
+                    <td>II prioritet</td>
+                    <td id="ii-prioritet-income-sum">0</td>
+                    <td id="ii-prioritet-expense-sum">0</td>
+                </tr>
+                <tr>
+                    <td>III prioritet</td>
+                    <td id="iii-prioritet-income-sum">0</td>
+                    <td id="iii-prioritet-expense-sum">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script>
+// Function to generate time period options
+function generateTimePeriodOptions(startYear, startMonth, endYear, endMonth) {
+    var options = [];
+    for (var year = startYear; year <= endYear; year++) {
+        var monthStart = (year === startYear) ? startMonth : 1;
+        var monthEnd = (year === endYear) ? endMonth : 12;
+        for (var month = monthStart; month <= monthEnd; month++) {
+            var monthNames = [
+                "januar", "februar", "mart", "april", "maj", "jun",
+                "jul", "avgust", "septembar", "oktobar", "novembar", "decembar"
+            ];
+            var monthName = monthNames[month - 1]; // Adjusting index
+            options.push({ month: monthName, year: year });
+        }
+    }
+    return options;
+}
+
+// Function to generate quarterly time period options
+function generateQuarterlyPeriodOptions(startYear, endYear) {
+    var quarters = ["I kvartal", "II kvartal", "III kvartal", "IV kvartal"];
+    var options = [];
+    for (var year = startYear; year <= endYear; year++) {
+        quarters.forEach(function(quarter) {
+            options.push({ month: quarter, year: year });
+        });
+    }
+    return options;
+}
+$(document).ready(function() {
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    var currentMonth = currentDate.getMonth() + 1; // January is 0
+
+    var options = generateTimePeriodOptions(2020, 1, currentYear, currentMonth);
+// Function to populate select elements with monthly options
+function populateOptions(selectMonth, selectYear, options) {
+    var uniqueMonths = new Set();
+    var uniqueYears = new Set();
+
+    options.forEach(function(option) {
+        // Add unique months to the select elements
+        if (!uniqueMonths.has(option.month)) {
+            var monthOption = new Option(option.month, option.month);
+            selectMonth.append(monthOption);
+            uniqueMonths.add(option.month);
+        }
+
+        // Add unique years to the select elements
+        if (!uniqueYears.has(option.year)) {
+            var yearOption = new Option(option.year, option.year);
+            selectYear.append(yearOption);
+            uniqueYears.add(option.year);
+        }
+    });
+}
+
+// Function to populate select elements with quarterly options
+function populateQuarterlyOptions(selectQuarter, selectYear, options) {
+    var uniqueQuarters = new Set();
+    var uniqueYears = new Set();
+
+    options.forEach(function(option) {
+        // Add unique quarters to the select elements
+        if (!uniqueQuarters.has(option.month)) {
+            var quarterOption = new Option(option.month, option.month);
+            selectQuarter.append(quarterOption);
+            uniqueQuarters.add(option.month);
+        }
+
+        // Add unique years to the select elements
+        if (!uniqueYears.has(option.year)) {
+            var yearOption = new Option(option.year, option.year);
+            selectYear.append(yearOption);
+            uniqueYears.add(option.year);
+        }
+    });
+}
+ function populateAnnualOptions(reportId) {
+        var select1Month = $('#' + reportId + '_period1_month');
+        var select1Year = $('#' + reportId + '_period1_year');
+        var select2Month = $('#' + reportId + '_period2_month');
+        var select2Year = $('#' + reportId + '_period2_year');
+        console.log("Emptying select elements...");
+        select1Month.empty(); // Clear previous options
+        select1Year.empty();
+        select2Month.empty();
+        select2Year.empty();
+        for (var year = 2020; year <= currentYear; year++) {
+            var yearOption = new Option(year, year);
+            select1Year.append(yearOption);
+            select2Year.append(yearOption.cloneNode(true));
+        }
+    }
+
+    // Function to populate select elements for monthly reports
+    function populateMonthlyOptions(reportId) {
+        console.log("Populating monthly options for report:", reportId);
+        var select1Month = $('#' + reportId + '_period1_month');
+        var select1Year = $('#' + reportId + '_period1_year');
+        var select2Month = $('#' + reportId + '_period2_month');
+        var select2Year = $('#' + reportId + '_period2_year');
+        console.log("Emptying select elements...");
+        select1Month.empty(); // Clear previous options
+        select1Year.empty();
+        select2Month.empty();
+        select2Year.empty();
+        console.log("Populating select elements...");
+        populateOptions(select1Month, select1Year, options);
+        populateOptions(select2Month, select2Year, options);
+    }
+
+    // Function to populate select elements for quarterly reports
+    function populateQuarterlyReports(reportId) {
+        console.log("Populating quarterly options for report:", reportId);
+        var select1Month = $('#' + reportId + '_period1_month');
+        var select1Year = $('#' + reportId + '_period1_year');
+        var select2Month = $('#' + reportId + '_period2_month');
+        var select2Year = $('#' + reportId + '_period2_year');
+        console.log("Emptying select elements...");
+        select1Month.empty(); // Clear previous options
+        select1Year.empty();
+        select2Month.empty();
+        select2Year.empty();
+        console.log("Populating select elements...");
+        var quarterlyOptions = generateQuarterlyPeriodOptions(2020, currentYear);
+        populateQuarterlyOptions(select1Month, select1Year, quarterlyOptions);
+        populateQuarterlyOptions(select2Month, select2Year, quarterlyOptions);
+    }
+
+    // Initial population based on default option
+    populateMonthlyOptions('report1'); // Assuming 'report1' is initially selected
+    populateMonthlyOptions('report2'); // Assuming 'report2' is initially selected
+
+    // Event listener for report type change
+$('#report1, #report2').on('change', function() {
+        var reportId = $(this).attr('id');
+        var reportType = $(this).val();
+
+        if (reportType === 'report1_quarter' || reportType === 'report2_quarter') {
+            populateQuarterlyReports(reportId);
+        } else if (reportType === 'report1_year' || reportType === 'report2_year') {
+            populateAnnualOptions(reportId);
+        } else {
+            populateMonthlyOptions(reportId);
+        }
+    });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const role = localStorage.getItem('role'); // Read role from localStorage
+
+            if (role === 'MANFINANCE') {
+                console.log('Role is MANFINANCE, fetching budget models...');
+                fetch(`/api/budgetmodel/all?role=${role}`)
+                    .then(response => {
+                        console.log('Received response:', response);
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Fetched data:', data);
+                        const select = document.getElementById('report3');
+                        // Clear any existing options
+                        select.innerHTML = '';
+                        if (data.length > 0) {
+                            data.forEach(model => {
+                                const option = document.createElement('option');
+                                option.value = model.id;
+                                option.textContent = model.name;
+                                select.appendChild(option);
+                            });
+                        } else {
+                            const option = document.createElement('option');
+                            option.textContent = 'No models available';
+                            select.appendChild(option);
+                        }
+                    })
+                    .catch(error => console.error('Error fetching budget models:', error));
+            } else {
+                console.error('Only finance managers can download reports!');
+            }
+        });
+$(document).ready(function() {
+    // Function to fetch and populate budget model options
+    function fetchBudgetModels() {
+        const role = localStorage.getItem('role');
+        if (role === 'MANFINANCE') {
+            $.ajax({
+                url: `/api/budgetmodel/all?role=${role}`,
+                type: 'GET',
+                success: function(data) {
+                    const select = $('#report3');
+                    select.empty(); // Clear existing options
+                    if (data.length > 0) {
+                        $.each(data, function(index, model) {
+                            const option = $('<option>', {
+                                value: model.id,
+                                text: model.name
+                            });
+                            select.append(option);
+                        });
+                    } else {
+                        const option = $('<option>', {
+                            text: 'No models available'
+                        });
+                        select.append(option);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching budget models:', error);
+                }
+            });
+        } else {
+            console.error('Only finance managers can download reports!');
+        }
+    }
+
+    fetchBudgetModels();
+
+
+});
+  function exportHTMLtoPDF() {
+         let htmlElement = document.getElementById('budget-content');
+         let options = {
+           margin: 10 // Adjust margin as needed
+         };
+
+         html2pdf().set(options).from(htmlElement).save('exported_file.pdf');
+      }
+
+      document.getElementById('downloadBtn3').addEventListener('click', exportHTMLtoPDF);
+
+document.getElementById('downloadBtn1').addEventListener('click', function () {
+    const selectedReportType = document.getElementById('report1').value;
+
+    if (selectedReportType === 'report1_month') {
+        // Fetch the selected period month and year values
+        const period1MonthName = document.getElementById('report1_period1_month').value;
+        const period1Year = document.getElementById('report1_period1_year').value;
+        const period2MonthName = document.getElementById('report1_period2_month').value;
+        const period2Year = document.getElementById('report1_period2_year').value;
+
+        // Define a mapping from month names to numerical values
+        const monthNameToNumber = {
+            "januar": "01", "februar": "02", "mart": "03", "april": "04",
+            "maj": "05", "jun": "06", "jul": "07", "avgust": "08",
+            "septembar": "09", "oktobar": "10", "novembar": "11", "decembar": "12"
+        };
+
+        // Check if the selected month names are valid
+        if (!(period1MonthName in monthNameToNumber) || !(period2MonthName in monthNameToNumber)) {
+            alert('Invalid month name selected.');
+            return;
+        }
+
+        // Convert month names to numerical values
+        const period1Month = monthNameToNumber[period1MonthName];
+        const period2Month = monthNameToNumber[period2MonthName];
+
+        // Construct date objects for comparison
+        const startDate = new Date(`${period1Year}-${period1Month}-01`);
+        const endDate = new Date(`${period2Year}-${period2Month}-01`);
+
+        // Check if period2 is not later than period1
+        if (endDate < startDate) {
+            alert('Period "To" must be later than or equal to Period "From".');
+            return;
+        }
+
+        // Calculate the difference in months between the selected dates
+        const monthDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 + endDate.getMonth() - startDate.getMonth();
+
+        // Check if the difference exceeds 6 months
+        if (monthDiff > 6) {
+            alert('Maximum 6-month period allowed.');
+            return;
+        }
+
+        // Construct the endpoint URL with parameters
+        const endpoint = `/pdf/report2?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`;
+
+        // Fetch PDF report
+        fetch(endpoint)
+            .then(response => response.blob())
+            .then(blob => {
+                // Create a blob URL and initiate download
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'report.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(err => console.error('Error downloading PDF:', err));
+    } else if (selectedReportType === 'report1_year') {
+        // Fetch the selected year values
+        const year1 = document.getElementById('report1_period1_year').value;
+        const year2 = document.getElementById('report1_period2_year').value;
+
+        // Validate selected years
+        if (year1 === "" || year2 === "") {
+            alert('Please select both "From" and "To" years.');
+            return;
+        }
+
+        // Convert years to integers
+        const startYear = parseInt(year1, 10);
+        const endYear = parseInt(year2, 10);
+
+        // Validate if start year is earlier than or equal to end year
+        if (startYear > endYear) {
+            alert('Year "To" must be later than or equal to Year "From".');
+            return;
+        }
+if (endYear - startYear > 5) {
+            alert('Maximum 5-year period allowed.');
+            return;
+        }
+        // Construct the endpoint URL with parameters
+        const endpoint = `/pdf/report3?startYear=${startYear}&endYear=${endYear}`;
+
+        // Fetch PDF report
+        fetch(endpoint)
+            .then(response => response.blob())
+            .then(blob => {
+                // Create a blob URL and initiate download
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'report.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(err => console.error('Error downloading PDF:', err));
+
+    } else {
+        alert('Unsupported report type selected.');
+    }
+});
+
+document.getElementById('downloadBtn2').addEventListener('click', function () {
+    const selectedReportType = document.getElementById('report2').value;
+
+    if (selectedReportType === 'report2_month') {
+        // Fetch the selected period month and year values
+        const period1MonthName = document.getElementById('report2_period1_month').value;
+        const period1Year = document.getElementById('report2_period1_year').value;
+        const period2MonthName = document.getElementById('report2_period2_month').value;
+        const period2Year = document.getElementById('report2_period2_year').value;
+
+        // Define a mapping from month names to numerical values
+        const monthNameToNumber = {
+            "januar": "01", "februar": "02", "mart": "03", "april": "04",
+            "maj": "05", "jun": "06", "jul": "07", "avgust": "08",
+            "septembar": "09", "oktobar": "10", "novembar": "11", "decembar": "12"
+        };
+
+        // Check if the selected month names are valid
+        if (!(period1MonthName in monthNameToNumber) || !(period2MonthName in monthNameToNumber)) {
+            alert('Invalid month name selected.');
+            return;
+        }
+
+        // Convert month names to numerical values
+        const period1Month = monthNameToNumber[period1MonthName];
+        const period2Month = monthNameToNumber[period2MonthName];
+
+        // Construct date objects for comparison
+        const startDate = new Date(`${period1Year}-${period1Month}-01`);
+        const endDate = new Date(`${period2Year}-${period2Month}-01`);
+
+        // Check if period2 is not later than period1
+        if (endDate < startDate) {
+            alert('Period "To" must be later than or equal to Period "From".');
+            return;
+        }
+
+        // Calculate the difference in months between the selected dates
+        const monthDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 + endDate.getMonth() - startDate.getMonth();
+
+        // Check if the difference exceeds 6 months
+        if (monthDiff > 6) {
+            alert('Maximum 6-month period allowed.');
+            return;
+        }
+
+        // Construct the endpoint URL with parameters
+        const endpoint = `/pdf/report2?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`;
+
+        // Fetch PDF report
+        fetch(endpoint)
+            .then(response => response.blob())
+            .then(blob => {
+                // Create a blob URL and initiate download
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'report.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(err => console.error('Error downloading PDF:', err));
+    } else if (selectedReportType === 'report2_year') {
+        // Fetch the selected year values
+        const year1 = document.getElementById('report2_period1_year').value;
+        const year2 = document.getElementById('report2_period2_year').value;
+
+        // Validate selected years
+        if (year1 === "" || year2 === "") {
+            alert('Please select both "From" and "To" years.');
+            return;
+        }
+
+        // Convert years to integers
+        const startYear = parseInt(year1, 10);
+        const endYear = parseInt(year2, 10);
+
+        // Validate if start year is earlier than or equal to end year
+        if (startYear > endYear) {
+            alert('Year "To" must be later than or equal to Year "From".');
+            return;
+        }
+if (endYear - startYear > 5) {
+            alert('Maximum 5-year period allowed.');
+            return;
+        }
+        // Construct the endpoint URL with parameters
+        const endpoint = `/pdf/report4?startYear=${startYear}&endYear=${endYear}`;
+
+        // Fetch PDF report
+        fetch(endpoint)
+            .then(response => response.blob())
+            .then(blob => {
+                // Create a blob URL and initiate download
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'report.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(err => console.error('Error downloading PDF:', err));
+
+    } else {
+        alert('Unsupported report type selected.');
+    }
+});
+
+
+});
+
+</script>
+</body>
+</html>

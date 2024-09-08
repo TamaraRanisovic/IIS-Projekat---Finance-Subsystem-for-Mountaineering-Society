@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC93F638-F6EE-9C81-6712-B0F03E1C3CE5" name="PLAN_RASHOD">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>4A804EE9-41D5-956B-1B43-C9E9A5B7ABA4</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_plan_rashod" id="7702156D-FF59-881E-99D9-1CE1F23FCBA8">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>95678F41-C3BE-D925-27DC-0D8B31006D83</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="KategorijaRashoda" id="76D07B92-2C41-DA95-4D50-5E7BA15A8453">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>6343F8D0-A2DB-CA6D-88CF-3EB1BEA8207B</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>89B2065F-58DF-A40B-419C-1AAB506A6515</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Opis" id="7CFB2825-0FB7-D3E7-6E9D-CC67B70B6062">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>CC82301F-EA0A-9EB7-99AD-DB8EDCC7E367</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>FD6054F9-1EB1-F02E-738F-914B888D89A2</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Osnovna_cena" id="3DF89152-FA2F-DC90-6660-58E323FF4A43">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>EE4EB884-E147-5711-4D86-6EFA29986A6A</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kolicina" id="1A3A2701-1222-B746-8AA3-D1E29928807F">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>6EE8AE5D-C618-352F-AD0E-39684C2B0904</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Proritet" id="0DC12EBB-6732-C245-9C70-8D661978322A">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>28957125-8D1D-7D93-E607-8000FD1A625F</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>9F707B54-8C67-5B9A-4358-398676F7ED59</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Period" id="7941DFF2-0A28-080E-199A-15FF20B2958B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>D0A7A22A-E6FB-56F7-3416-A8AB0B7A08B0</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<domain>9C2F30E3-C77B-DD7C-C10E-DC8DBBBEF073</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="72557677-D2E4-23D1-7DD0-6B0898F7EDFB" name="PLAN_RASHOD_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>2228BC8C-76C0-71B5-45BF-7E5DDBD0D98B</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7702156D-FF59-881E-99D9-1CE1F23FCBA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

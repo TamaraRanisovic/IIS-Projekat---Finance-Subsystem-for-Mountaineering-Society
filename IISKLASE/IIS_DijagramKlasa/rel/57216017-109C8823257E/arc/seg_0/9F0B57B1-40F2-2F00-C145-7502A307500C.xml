@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="9F0B57B1-40F2-2F00-C145-7502A307500C" name="FKArc_2">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<mandatory>true</mandatory>
+<reverseArc>true</reverseArc>
+<table>CBFA038A-CBFA-B584-9A09-3B858ED0C643</table>
+<fkeys>
+<fkeyID>05E687AC-E72D-73AB-8F57-A3E68503A229</fkeyID>
+<fkeyID>C2E591FD-B89D-A1D4-03B7-DFA4CBDF65C7</fkeyID>
+<fkeyID>EE481CDE-DF47-73F5-48D2-06CAEF1CF8A2</fkeyID>
+<fkeyID>23022C6C-F89D-4873-6110-356E5F3315A2</fkeyID>
+<fkeyID>FD094731-A69D-7FBD-A7E4-7666B6D62469</fkeyID>
+</fkeys>
+</FKArc>

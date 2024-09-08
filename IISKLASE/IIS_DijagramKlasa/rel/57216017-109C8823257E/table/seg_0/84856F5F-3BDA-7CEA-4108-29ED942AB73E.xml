@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84856F5F-3BDA-7CEA-4108-29ED942AB73E" name="RASP_SREDSTVA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>6FE9E9EA-BCC2-1AB9-E5A7-0E2BA360922C</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="iznos" id="9F7D7F7A-1507-6C41-CE45-BCFDBE66BBA7">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>26C87A20-0E5B-142B-F19B-697EBC0F4B6A</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum_izmene" id="7857CFE8-B81F-47F7-0A13-B3458DA807D1">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>88DCECD6-0E8E-1493-8E05-73298E4CA32F</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>49468DFA-D700-3D3B-B27A-9356B01CF0FF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_rs" id="FD642893-0D4D-AC41-BBD6-6B9517056908">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>43A82D4C-2AB1-72C4-6B55-E0BD194745C1</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MENADZER_FINANS_ID" id="7C66C77B-ABD7-FCB4-9789-29D059EE6707">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>8AAEE98D-55C5-E0A6-0F29-8BA80462ADE2</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B676F3A-4B4C-ACA8-04D6-0D1A74E50BF7" referredColumn="E8637394-A45A-AB65-8A54-F1537600FE43"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="36FD1F0B-5A90-2252-4DD4-AB0F7952E216" name="RASP_SREDSTVA_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>74E48689-CE99-C959-4547-CD6ADF01CC46</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD642893-0D4D-AC41-BBD6-6B9517056908"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D80E6F73-9A19-DE27-9B88-5F443F9E0E04" name="RASP_SREDSTVA__IDX">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>198D581B-601F-7126-7926-FF7EC2E997D3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="7C66C77B-ABD7-FCB4-9789-29D059EE6707"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3DE8626-9D11-C23C-BB91-C025C0FA7356" name="RASP_SREDSTVA_MENADZER_FINANS_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>198D581B-601F-7126-7926-FF7EC2E997D3</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C66C77B-ABD7-FCB4-9789-29D059EE6707"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

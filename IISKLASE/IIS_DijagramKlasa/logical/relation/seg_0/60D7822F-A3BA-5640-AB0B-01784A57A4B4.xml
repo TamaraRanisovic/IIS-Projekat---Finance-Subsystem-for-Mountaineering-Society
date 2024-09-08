@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="kreira_rashod" directorySegmentName="seg_0" id="60D7822F-A3BA-5640-AB0B-01784A57A4B4">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 11:02:13 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<sourcePk>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</sourcePk>
+<targetPk>0BF588C0-248F-16D0-DF52-800A6BE4DD36</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>679AE108-5EEE-7851-29B7-A0BAA00AFEAF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9D509373-736A-0EB6-FDF8-FDED0E70DC23</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

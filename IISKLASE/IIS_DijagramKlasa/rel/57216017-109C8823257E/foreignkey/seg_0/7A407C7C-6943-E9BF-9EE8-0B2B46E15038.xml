@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7A407C7C-6943-E9BF-9EE8-0B2B46E15038" containerWithKeyObject="E86DC696-1D65-F866-065F-A2A8557DDE65" localFKIndex="E8892853-7D92-6414-8E0F-00D888736B70" name="MENADZER_FINANS_MENADZER_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>C1A0606B-0610-982F-37E2-0BAC755DCF59</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>MENADZER</referredTableLongName>
+<arc>2F169E4C-DC49-F121-F87B-5251860D15E1</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CB849C5D-76C4-72AD-9BA8-2C5A1864023C</referredTableID>
+<keyObject>B6905537-B75D-4186-7245-51FAD6E2A8E0</keyObject>
+<referredKeyID>B6905537-B75D-4186-7245-51FAD6E2A8E0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

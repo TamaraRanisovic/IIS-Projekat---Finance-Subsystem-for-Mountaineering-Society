@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Svi prihodi</title>
+    <link rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for the search input */
+        #searchInput {
+            width: calc(100% - 500px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        /* Style for the category filter dropdown */
+        #categoryFilter {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            float: right;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Svi prihodi društva</h1>
+    <br>
+    <!-- Search input -->
+    <input type="text" id="searchInput" placeholder="Pretraži prihode...">
+
+    <!-- Category filter dropdown -->
+    <select id="categoryFilter">
+        <option value="">Sve kategorije</option>
+        <option value="Članarina">Članarina</option>
+        <option value="Kotizacija za trku ili takmičenje">Kotizacija za trku ili takmičenje</option>
+        <option value="Uplata za obrazovni program">Uplata za obrazovni program</option>
+        <option value="Ostalo">Ostalo</option>
+    </select>
+
+    <br><br>
+    <table id="allincomes">
+        <tr>
+            <th>Datum i vreme &#8597;</th>
+            <th>Izvor prihoda</th>
+            <th>Opis</th>
+            <th>Kategorija</th>
+            <th>Iznos &#8597;</th>
+        </tr>
+    </table>
+</div>
+
+<!-- JavaScript code -->
+<script src="jquery.min.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script src="allincomes.js"></script>
+</body>
+</html>

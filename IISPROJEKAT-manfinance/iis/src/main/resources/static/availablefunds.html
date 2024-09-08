@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prihodi, rashodi, raspoloživa sredstva</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css">
+  <!-- JavaScript code -->
+  <script src="jquery.min.js"></script>
+  <script src="jquery.validate.min.js"></script>
+  <script src="availablefunds.js"></script>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .funds-section {
+          text-align: center;
+          padding: 20px;
+          margin-bottom: 90px
+        }
+
+        .funds-section h3 {
+          color: #333;
+          font-size: 24px;
+          margin-bottom: 55px;
+        }
+
+        .funds-section p {
+          color: #666;
+          font-size: 16px; /* Updated font size to 14px */
+            margin-bottom: 30px;
+
+        }
+
+        .funds-amount {
+          font-size: 48px;
+          color: #2c3e50;
+          margin-top: 10px;
+          font-weight: bold;
+        }
+
+        .currency {
+          font-size: 24px;
+          vertical-align: middle;
+          color: #999;
+        }
+
+        .amount {
+          font-size: inherit;
+          margin-left: 5px;
+          vertical-align: middle;
+          animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+                .submenu {
+            display: none;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .sidebar ul ul li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+        }
+
+        .sidebar ul ul li a {
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Planinarsko društvo "Vidikovac"</h2>
+  <ul>
+    <li><a href="financemanager.html">Početna</a></li>
+    <li>
+      <a href="#" class="menu-toggle">Prihodi <i class="fas fa-chevron-down"></i></a>
+      <ul class="submenu">
+        <li><a href="allincomes.html">Pregled svih prihoda</a></li>
+        <li><a href="addincome.html">Unos novog prihoda</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="menu-toggle">Rashodi <i class="fas fa-chevron-down"></i></a>
+      <ul class="submenu">
+        <li><a href="allexpenses.html">Pregled svih rashoda</a></li>
+        <li><a href="addexpense.html">Unos novog rashoda</a></li>
+      </ul>
+    </li>
+    <li><a href="budgetmodel.html">Kreiraj model budžeta</a></li>
+    <li><a href="financereports.html">Finansijski izveštaji</a></li>
+    <li><a href="besttour.html">Odabir najboljih tura</a></li>
+    <li><a href="profil.html">Vaš profil</a></li>
+    <li><a href="#">Pomoć</a></li>
+    <li><a href="login.html">Odjavi se</a></li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <div class="container">
+    <div class="funds-section">
+      <h1>Trenutno raspoloživa sredstva</h1>
+      <br>
+      <p>Poslednje ažuriranje: <span id="updateDate"></span></p>
+      <div class="funds-amount">
+        <span class="amount" id="fundsAmount"></span>
+        <span class="currency">RSD</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.menu-toggle').click(function(e){
+            e.preventDefault();
+            $(this).next('.submenu').toggleClass('active');
+        });
+    });
+</script>
+</body>
+</html>

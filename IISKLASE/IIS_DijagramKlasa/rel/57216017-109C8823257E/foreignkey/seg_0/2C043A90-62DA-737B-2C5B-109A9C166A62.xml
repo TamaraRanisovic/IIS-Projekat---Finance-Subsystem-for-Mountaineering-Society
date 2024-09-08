@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2C043A90-62DA-737B-2C5B-109A9C166A62" containerWithKeyObject="FAEEC25A-327D-9958-2556-A0B744EDCA2E" localFKIndex="17DDA8CE-D603-0008-04FE-D26B0F03CFED" name="cini_model_rashod_PLAN_RASHOD_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>FC6FD5CD-901C-E7F5-068B-192599D9116F</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>PLAN_RASHOD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BC93F638-F6EE-9C81-6712-B0F03E1C3CE5</referredTableID>
+<keyObject>72557677-D2E4-23D1-7DD0-6B0898F7EDFB</keyObject>
+<referredKeyID>72557677-D2E4-23D1-7DD0-6B0898F7EDFB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_plan_rashod</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

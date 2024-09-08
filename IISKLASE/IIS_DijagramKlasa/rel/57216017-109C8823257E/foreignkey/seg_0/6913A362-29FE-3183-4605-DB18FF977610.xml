@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6913A362-29FE-3183-4605-DB18FF977610" containerWithKeyObject="CE64E19B-73EB-985D-1006-0669EC55D4CF" localFKIndex="DB8E7A98-F592-EF67-5A50-320AB0ADE6C9" name="ocenjuje_OCENA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>CCBDE3A6-4AE7-BF9F-857A-5F68A336169B</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>OCENA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C2C7AC5E-4419-C15E-4883-AD65CD2427CD</referredTableID>
+<keyObject>1AB5F68C-12D1-6297-D853-308CA4CCCF61</keyObject>
+<referredKeyID>1AB5F68C-12D1-6297-D853-308CA4CCCF61</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Ocena</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

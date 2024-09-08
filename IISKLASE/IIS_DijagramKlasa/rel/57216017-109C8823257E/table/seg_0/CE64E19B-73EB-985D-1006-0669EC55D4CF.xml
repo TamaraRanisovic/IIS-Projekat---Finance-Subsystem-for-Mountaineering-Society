@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CE64E19B-73EB-985D-1006-0669EC55D4CF" name="ocenjuje">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="UCESNIK_ID" id="E0A08287-4AEF-CB1D-E10B-BA0FCAACDDDB">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DAB7B2C6-D759-E5E8-9766-9DE72C2698CA" referredColumn="2C1387DB-1060-4F61-7FD7-A91B5330A59A"/>
+</associations>
+</Column>
+<Column name="OCENA_ID_Ocena" id="057748AB-E306-84B4-C1DA-DBE345E25D60">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6913A362-29FE-3183-4605-DB18FF977610" referredColumn="DF7E0A21-1D2C-25F7-0EE6-C0CFE3BC15E1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4F7C134E-B381-73C4-0720-48CE2864F95B" name="ocenjuje_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0A08287-4AEF-CB1D-E10B-BA0FCAACDDDB"/>
+<colUsage columnID="057748AB-E306-84B4-C1DA-DBE345E25D60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95A7B99B-F538-736B-0816-7B7C682202CD" name="ocenjuje_UCESNIK_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>CCBDE3A6-4AE7-BF9F-857A-5F68A336169B</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0A08287-4AEF-CB1D-E10B-BA0FCAACDDDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DB8E7A98-F592-EF67-5A50-320AB0ADE6C9" name="ocenjuje_OCENA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>CCBDE3A6-4AE7-BF9F-857A-5F68A336169B</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="057748AB-E306-84B4-C1DA-DBE345E25D60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

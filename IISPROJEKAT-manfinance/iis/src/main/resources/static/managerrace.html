@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dobrodosli!</title>
+    <link rel = "stylesheet" type = "text/css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src = "managerrace.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #14B82C;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button#allcompetitions {
+            background-color: #14B82C;
+            color: #fff;
+        }
+
+        button#allcompetitions:hover {
+            background-color: #0f8f23;
+        }
+
+        button#logout {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        button#logout:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body class="korisnik">
+<div class="container">
+    <h1>Dobrodošli!</h1>
+
+    <button type="button" id="allcompetitions">Pregledajte sva takmicenja</button>
+    <button type="button" id="createrace">Kreirajte novo takmicenje</button>
+    <button type="button" id="logout">Odjava</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="cini_model_prihod" directorySegmentName="seg_0" id="51B61346-19A5-507C-AA77-1D316890C9E1">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 14:53:16 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>E9437116-F85B-572F-5091-05E54DE14DA8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E38A5834-E8EB-4778-D7C9-5BD1C3AE6EE3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

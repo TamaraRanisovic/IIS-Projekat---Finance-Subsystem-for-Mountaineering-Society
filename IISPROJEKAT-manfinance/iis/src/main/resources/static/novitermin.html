@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Novi termin</title>
+    <link rel = "stylesheet" type = "text/css" >
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+
+    <script src ="novitermin.js"></script>
+</head>
+<body>
+<div class = "novitermin">
+    <h1>Novi termin</h1>
+
+
+    <form id = "novitermin">
+        <label for="datumivreme">Datum i vreme</label>
+        <input type="datetime-local"   id="datumivreme" name="datumivreme" required><br><br>
+        <label for="cena">Cena</label>
+        <input type="number" id="cena" name="cena" required><br><br>
+        <label for="opis">Opis</label>
+        <input type="text" id="opis" name="opis" required><br><br>
+
+
+
+    </form>
+</div>
+<table id ="prostorija1">
+    <tr>
+        <th>Oznaka</th>
+        <th>Kapacitet</th>
+        <th>Izaberi salu</th>
+
+    </tr>
+
+</table>
+
+<fieldset>
+
+    Odaberite tip termina:<br/>
+    <label for="tag1">CASPLANINARENJA</label>
+    <input id="tag1" class = 'tag1' type="radio" name="tag1" value="CASPLANINARENJA"  />
+    <br/>
+    <label for="tag2">CASOPONASANJUUPRIRODI</label>
+    <input id="tag2"  type="radio" name="tag1" value="CASOPONASANJUUPRIRODI"  />
+    <br/>
+
+
+
+</fieldset>
+
+
+<button id ="novitermin2" type = button>Kreiraj novi termin</button>
+
+
+
+
+
+</body>
+</html>

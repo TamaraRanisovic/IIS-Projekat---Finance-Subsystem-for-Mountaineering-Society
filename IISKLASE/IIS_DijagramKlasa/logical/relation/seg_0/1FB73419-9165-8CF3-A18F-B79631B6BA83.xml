@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ucestvuje_tura" directorySegmentName="seg_0" id="1FB73419-9165-8CF3-A18F-B79631B6BA83">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-04 11:15:37 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>CF1FFD6B-4F06-DFE8-9218-4C62615253AF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>768C5F42-A291-6B90-2CA7-2F732DCF0E68</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

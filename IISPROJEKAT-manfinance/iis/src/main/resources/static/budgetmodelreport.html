@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finansijski izveštaji</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+  <link rel="stylesheet" type="text/css">
+  <script src="jquery.min.js"></script>
+  <script src="jquery.validate.min.js"></script>
+  <script src="financereports.js"></script>
+
+  <style>
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+
+            overflow-y: auto; /* Add scroll if content exceeds viewport height */
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; /* Add scroll if content exceeds viewport height */
+        }
+        .main-content h3 {
+        	text-align: center;
+        }
+        .main-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 45px;
+            width: 100%;
+        }
+
+        .zeljena-dobit-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            margin-right: 25px;
+        }
+
+        .zeljena-dobit-label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .zeljena-dobit-input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .zeljena-dobit-input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 120px;
+        }
+
+        .zeljena-dobit-unit {
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        .budget-name-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .budget-name-label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .budget-name-input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .budget-name-input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        .budget-name-unit {
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        .vremenski-period-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .vremenski-period-label {
+            font-size: 18px;
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+		.start-date-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .start-date-label {
+            font-size: 18px;
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+        .period-select {
+            width: 82px; /* Adjust as needed */
+        }
+
+        .priority-select {
+            width: 85px; /* Adjust as needed */
+        }
+
+        .vremenski-period-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 125px;
+        }
+
+        .start-date-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 125px;
+        }
+
+        .tables-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1500px; /* Adjusted to fit both tables */
+        }
+
+        .container {
+            margin-left: 32px;
+            margin-right: 32px;
+        	justify-content: center;
+            margin-bottom: 40px; /* Increased margin between tables */
+            text-align: center;
+            font-size: 14px;
+            max-width: 100%; /* Ensure container stretches to full width */
+            overflow-x: auto; /* Add horizontal scroll if content overflows */
+            height: 200px; /* Increased fixed height for the container */
+            max-height: 100%;
+            overflow-y: auto; /* Add vertical scroll if content overflows */
+        }
+        .summary-container {
+            margin-top: 20px;
+            margin-left: 32px;
+            margin-bottom: 40px; /* Increased margin between tables */
+            text-align: center;
+            font-size: 14px; /* Reduced font size */
+            max-width: 47%; /* Ensure container stretches to full width */
+            overflow-x: auto; /* Add horizontal scroll if content overflows */
+            height: 175px; /* Reduced fixed height for the container */
+            max-height: 100%;
+            overflow-y: auto; /* Add vertical scroll if content overflows */
+        }
+        #summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px; /* Reduced font size */
+        }
+
+        #summary-table th, #summary-table td {
+            padding: 4px 8px; /* Reduced padding */
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        #summary-table th {
+            background-color: #15F187;
+            font-weight: bold;
+        }
+        #summary-table td:first-child,
+        #summary-table th:first-child {
+            background-color: #15F187;
+            font-weight: bold;
+            width: 100px;
+        }
+
+        #summary-table td:nth-child(2), #summary-table td:nth-child(3),
+        #summary-table th:nth-child(2), #summary-table th:nth-child(3) {
+            width: 150px; /* Set a fixed width for the 2nd and 3rd columns */
+        }
+
+        .container h3 {
+            margin-bottom: 10px; /* Reduced margin */
+            font-size: 16px; /* Reduced font size for headings */
+        }
+
+        .submenu {
+            display: none;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .sidebar ul ul li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .sidebar ul ul li a {
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px; /* Reduced margin */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            table-layout: fixed; /* Ensures the table fits within the container */
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px; /* Reduced padding */
+            text-align: center; /* Center align text */
+            font-size: 12px; /* Reduced font size for table content */
+        }
+
+        th {
+            background-color: #15F187;
+            color: #000000;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .category-select {
+            width: 135px; /* Adjust as needed */
+            max-width: 100%; /* Ensure it doesn't overflow */
+        }
+
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 140px; /* Adjust as needed */
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 80px; /* Adjust as needed */
+        }
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 60px; /* Adjust as needed */
+        }
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 90px; /* Adjust as needed */
+        }
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 87px; /* Adjust as needed */
+        }
+
+
+        .add-row {
+            cursor: pointer;
+            color: #000000;
+            background-color: #15F187;
+            border: none;
+            padding: 8px 16px; /* Reduced padding */
+            margin-top: 10px; /* Reduced margin */
+            border-radius: 5px;
+            font-size: 14px; /* Reduced font size */
+        }
+
+        .add-row:hover {
+            background-color: #12DB7A;
+        }
+
+        .delete-row {
+            cursor: pointer;
+            color: #fff;
+            background-color: #f44336;
+            border: none;
+            padding: 6px 10px; /* Reduced padding */
+            border-radius: 3px;
+            font-size: 12px; /* Reduced font size */
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-row:hover {
+            background-color: #d32f2f;
+        }
+
+        .inputs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            margin-left: 35px;
+        }
+
+        .zeljena-dobit-container,
+        .vremenski-period-container {
+            margin-bottom: 20px;
+        }
+
+        .start-date-container {
+            margin-bottom: 20px;
+        }
+
+        .container table thead {
+            position: sticky;
+            top: 0;
+            background-color: #15F187;
+            z-index: 1;
+        }
+
+        .container table th {
+            position: sticky;
+            top: 0;
+            background-color: #15F187;
+            z-index: 1;
+            width: calc(50% - 10px); /* Adjust width of tables */
+            max-height: 800px; /* Ensure tables fill container height */
+            overflow-y: auto; /* Add vertical scroll if content overflows */
+        }
+
+        .profit-container {
+            display: flex;
+            flex-direction: column;
+            width: 500px; /* Adjust the width as needed */
+        }
+        .new-container {
+            display: flex;
+            align-items: left;
+            gap: 10%;
+        }
+.expected-profit-container {
+    font-size: 30px;
+    color: #2c3e50;
+    margin-top: 60px;
+    font-weight: bold;
+}
+.desired-profit-container {
+    font-size: 30px;
+    color: #2c3e50;
+    margin-top: 15px;
+    font-weight: bold;
+}
+        .currency {
+          font-size: 24px;
+          vertical-align: middle;
+          color: #999;
+        }
+
+        .amount {
+          font-size: inherit;
+          margin-left: 5px;
+          vertical-align: middle;
+          animation: fadeIn 1s ease-in-out;
+        }
+        #title {
+          margin-top: 20px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        #histogram-container {
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        #histogram1, #histogram2 {
+            width: 525px;
+            height: 390px;
+            margin-top: 15px;
+        }
+
+        #histogram1-title, #histogram2-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .save-model {
+            cursor: pointer;
+            color: #000000;
+            width: 200px;
+            height: 65px;
+            text-align: center;
+            justify-content: center; /* Not required for button elements */
+            font-weight: bold;
+            background-color: #15F187;
+            border: none;
+            padding: 8px 16px;
+            margin: 35px auto 0; /* Centered vertically, 0 margin at top, auto margin horizontally */
+            border-radius: 5px;
+            font-size: 22px;
+            display: block; /* Ensures button behaves like a block-level element */
+        }
+
+        .save-model:hover {
+            background-color: #12DB7A;
+        }
+        .save-model[disabled] {
+            background-color: #dddddd;
+            color: #999999;
+            cursor: not-allowed;
+    }
+      input[type="datetime-local"] {
+      padding: 10px;
+      margin-bottom: 0px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+      width: 200px;
+    }
+    .download-report {
+            cursor: pointer;
+            color: #000000;
+            width: 120px;
+            height: 40px;
+			margin-left: 40px;
+            margin-bottom: 45px;
+            font-weight: bold;
+            background-color: #15F187;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .download-report:hover {
+            background-color: #12DB7A;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div id="main-content" class="main-content">
+  <br>
+  <div class="main-heading">Izveštaj za model budžeta</div>
+  <button class="download-report" id="downloadBtn3">Preuzmi</button>
+
+  <div class="inputs-container">
+    <div class="budget-name-container">
+      <label for="budget-name" class="budget-name-label">Naziv modela budžeta:</label>
+      <div class="budget-name-input-container">
+        <input type="text" id="budget-name" name="budget-name" class="budget-name-input" placeholder="Unesite naziv">
+      </div>
+    </div>
+
+  </div>
+  <div class="inputs-container">
+    <div class="zeljena-dobit-container">
+      <label for="zeljena-dobit" class="zeljena-dobit-label">Željena dobit:</label>
+      <div class="zeljena-dobit-input-container">
+        <input type="text" id="zeljena-dobit" name="zeljena-dobit" class="zeljena-dobit-input" placeholder="Unesite iznos">
+        <span class="zeljena-dobit-unit">RSD</span>
+      </div>
+    </div>
+    <div class="zeljena-dobit-container">
+      <label for="zeljena-dobit" class="zeljena-dobit-label">Očekivana dobit:</label>
+      <div class="zeljena-dobit-input-container">
+        <input type="text" id="ocekivana-dobit" name="ocekivana-dobit" class="zeljena-dobit-input" placeholder="Unesite iznos">
+        <span class="zeljena-dobit-unit">RSD</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="inputs-container">
+
+    <div class="vremenski-period-container">
+      <label for="vremenski-period" class="vremenski-period-label">Vremenski period:</label>
+      <select id="vremenski-period" name="vremenski-period" class="vremenski-period-select">
+        <option value="mesec">mesec</option>
+        <option value="kvartal">kvartal</option>
+        <option value="godina">godina</option>
+      </select>
+    </div>
+  </div>
+  <div class="inputs-container">
+
+    <div class="start-date-container">
+      <label for="start-date" class="start-date-label">Datum početka važenja:</label>
+      <input type="datetime-local" id="start-date" name="start-date" required>
+
+    </div>
+  </div>
+
+  <h3>Planirani prihodi</h3>
+  <div class="container">
+    <table id="financeTable1">
+      <thead>
+      <tr>
+        <th>Kateg. prihoda</th>
+        <th>Opis</th>
+        <th>Osnovna cena (RSD)</th>
+        <th>Količina</th>
+        <th>Prioritet</th>
+        <th>Period</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <h3>Planirani rashodi</h3>
+  <div class="container">
+    <table id="financeTable2">
+      <thead>
+      <tr>
+        <th>Kateg. rashoda</th>
+        <th>Opis</th>
+        <th>Osnovna cena (RSD)</th>
+        <th>Količina</th>
+        <th>Prioritet</th>
+        <th>Period</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Dynamic rows will be added here -->
+      </tbody>
+    </table>
+  </div>
+
+
+  <div id="histogram-container">
+    <div>
+      <div id="histogram1-title">Prikaz planiranih prihoda i rashoda po periodu</div>
+      <div id="histogram1"></div>
+    </div>
+
+  </div>
+
+  <div id="histogram-container">
+
+    <div>
+      <div id="histogram2-title">Prikaz očekivane dobiti po prioritetima i periodima</div>
+      <div id="histogram2"></div>
+    </div>
+  </div>
+  <div class="new-container">
+    <div class="summary-container">
+      <h3>Rezime planiranih prihoda i rashoda po prioritetima</h3>
+      <table id="summary-table">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Ukupni Prihodi (RSD)</th>
+          <th>Ukupni Rashodi (RSD)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>I prioritet</td>
+          <td id="i-prioritet-income-sum">0</td>
+          <td id="i-prioritet-expense-sum">0</td>
+        </tr>
+        <tr>
+          <td>II prioritet</td>
+          <td id="ii-prioritet-income-sum">0</td>
+          <td id="ii-prioritet-expense-sum">0</td>
+        </tr>
+        <tr>
+          <td>III prioritet</td>
+          <td id="iii-prioritet-income-sum">0</td>
+          <td id="iii-prioritet-expense-sum">0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
+</div>
+<script>
+// Function to make AJAX request
+
+
+function updateHistogram1(incomesTableId, expensesTableId, selectedPeriod) {
+        var incomesData = [];
+        var expensesData = [];
+
+        $('#' + incomesTableId + ' tbody tr').each(function() {
+            var rowData = {
+                osnovna_cena: parseFloat($(this).find('td:eq(2)').text()),
+                kolicina: parseInt($(this).find('td:eq(3)').text()),
+                period: $(this).find('td:eq(5)').text() // Get the selected option value
+            };
+            incomesData.push(rowData);
+        });
+
+        $('#' + expensesTableId + ' tbody tr').each(function() {
+            var rowData = {
+                osnovna_cena: parseFloat($(this).find('td:eq(2)').text()),
+                kolicina: parseInt($(this).find('td:eq(3)').text()),
+                period: $(this).find('td:eq(5)').text() // Get the selected option value
+            };
+            expensesData.push(rowData);
+        });
+
+        if (selectedPeriod === 'mesec') {
+            var xAxisData = ['I mesec'];
+        } else if (selectedPeriod === 'kvartal') {
+            var xAxisData = ['I mesec', 'II mesec', 'III mesec'];
+        } else if (selectedPeriod === 'godina') {
+            var xAxisData = ['I kvartal', 'II kvartal', 'III kvartal', 'IV kvartal'];
+        }
+
+        var prihodiData = [];
+        var rashodiData = [];
+
+        xAxisData.forEach(function(period) {
+            var incomeAmount = 0;
+            var expenseAmount = 0;
+
+            incomesData.forEach(function(income) {
+                if (income.period === period) {
+                incomeAmount += income.osnovna_cena * income.kolicina;
+                }
+            });
+
+            expensesData.forEach(function(expense) {
+                if (expense.period === period) {
+                expenseAmount += expense.osnovna_cena * expense.kolicina;
+                }
+            });
+
+            prihodiData.push(incomeAmount);
+            rashodiData.push(expenseAmount);
+        });
+
+        var chart = echarts.init(document.getElementById('histogram1'));
+
+        var option = {
+            xAxis: {
+            type: 'category',
+            data: xAxisData,
+            name: 'Period',
+            nameLocation: 'middle',
+            nameGap: 30, // Position the label at the end
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Iznos (RSD)'
+        },
+            legend: {
+                data: ['Prihodi', 'Rashodi'],
+        },
+        series: [
+        {
+            name: 'Prihodi',
+            type: 'bar',
+            data: prihodiData,
+            barWidth: '30%',
+            itemStyle: {
+            color: '#C1FF72' // Shade of green
+        }
+        },
+        {
+            name: 'Rashodi',
+            type: 'bar',
+            data: rashodiData,
+            barWidth: '30%',
+            itemStyle: {
+            color: '#00BF63' // Lighter shade of green
+        }
+        }
+        ]
+        };
+
+        chart.setOption(option);
+        }
+
+
+function updateHistogram2(incomesTableId, expensesTableId, selectedPeriod) {
+    var incomesData = [];
+    var expensesData = [];
+
+    $('#' + incomesTableId + ' tbody tr').each(function() {
+        var rowData = {
+            osnovna_cena: parseFloat($(this).find('td:eq(2)').text()),
+            kolicina: parseInt($(this).find('td:eq(3)').text()),
+            period: $(this).find('td:eq(5)').text(), // Get the selected option value
+            priority: $(this).find('td:eq(4)').text() // Get the priority value
+        };
+        incomesData.push(rowData);
+    });
+
+    $('#' + expensesTableId + ' tbody tr').each(function() {
+        var rowData = {
+            osnovna_cena: parseFloat($(this).find('td:eq(2)').text()),
+            kolicina: parseInt($(this).find('td:eq(3)').text()),
+            period: $(this).find('td:eq(5)').text(), // Get the selected option value
+            priority: $(this).find('td:eq(4)').text() // Get the priority value
+        };
+        expensesData.push(rowData);
+    });
+
+    if (selectedPeriod === 'mesec') {
+        var xAxisData = ['I mesec'];
+    } else if (selectedPeriod === 'kvartal') {
+        var xAxisData = ['I mesec', 'II mesec', 'III mesec'];
+    } else if (selectedPeriod === 'godina') {
+        var xAxisData = ['I kvartal', 'II kvartal', 'III kvartal', 'IV kvartal'];
+    }
+
+    var priorities = ['I prioritet', 'II prioritet', 'III prioritet'];
+    var profitData = {
+        'I prioritet': [],
+        'II prioritet': [],
+        'III prioritet': []
+    };
+
+    xAxisData.forEach(function(period) {
+        var periodProfit = {
+            'I prioritet': 0,
+            'II prioritet': 0,
+            'III prioritet': 0
+        };
+
+        incomesData.forEach(function(income) {
+            if (income.period === period) {
+                periodProfit[income.priority] += income.osnovna_cena * income.kolicina;
+            }
+        });
+
+        expensesData.forEach(function(expense) {
+            if (expense.period === period) {
+                periodProfit[expense.priority] -= expense.osnovna_cena * expense.kolicina;
+            }
+        });
+
+        priorities.forEach(function(priority) {
+            profitData[priority].push(periodProfit[priority]);
+        });
+    });
+    var colors = ['#00BF63', '#7ED957', '#C1FF72']; // Different shades of green
+
+    var seriesData = priorities.map(function(priority, index) {
+        return {
+            name: priority,
+            type: 'bar',
+            stack: 'total',
+            data: profitData[priority],
+            barWidth: '30%',
+            itemStyle: {
+                color: colors[index] // Apply different shades of green
+            }
+        };
+    });
+
+    var chart = echarts.init(document.getElementById('histogram2'));
+
+    var option = {
+        xAxis: {
+            type: 'category',
+            data: xAxisData,
+            name: 'Period',
+            nameLocation: 'middle',
+            nameGap: 30
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Iznos (RSD)'
+        },
+        legend: {
+            data: priorities
+        },
+        series: seriesData
+    };
+
+    chart.setOption(option);
+}
+    function updateSummaryTable() {
+        var priorities = ['I prioritet', 'II prioritet', 'III prioritet'];
+        priorities.forEach(function(priority) {
+            var incomeSum = calculateSumByPriority('#financeTable1', priority);
+            var expenseSum = calculateSumByPriority('#financeTable2', priority);
+            var incomeCellId = '#' + priority.replace(' ', '-').toLowerCase() + '-income-sum';
+            var expenseCellId = '#' + priority.replace(' ', '-').toLowerCase() + '-expense-sum';
+            $(incomeCellId).text(incomeSum.toFixed(2));
+            $(expenseCellId).text(expenseSum.toFixed(2));
+        });
+    }
+/*
+function fetchPlannedIncomesByBudgetModel(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName + '/planned-incomes',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, populate the table with received data
+      populateTable(data);
+        updateSummaryTable();
+  updateHistogram1('financeTable1', 'financeTable2', $('#vremenski-period').val());
+  updateHistogram2('financeTable1', 'financeTable2', $('#vremenski-period').val());
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching planned incomes:", error);
+    }
+  });
+}*/
+
+function fetchPlannedExpensesByBudgetModel(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName + '/planned-incomes',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, populate the table with received data
+      populateTable(data);
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching planned incomes:", error);
+    }
+  });
+
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName + '/planned-expenses',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, populate the table with received data
+      populateTableExpenses(data);
+
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching planned expenses:", error);
+    }
+  });
+
+  updateSummaryTable();
+  updateHistogram1('financeTable1', 'financeTable2', $('#vremenski-period').val());
+  updateHistogram2('financeTable1', 'financeTable2', $('#vremenski-period').val());
+
+}
+
+// Function to populate the table with data
+function populateTable(data) {
+  var tableBody = $('#financeTable1 tbody');
+  // Clear existing rows
+  tableBody.empty();
+
+  // Iterate through received data and append rows to the table
+  data.forEach(function(item) {
+    var row = $('<tr>');
+    row.append($('<td>').text(item.incomeCategory));
+    row.append($('<td>').text(item.description));
+    row.append($('<td>').text(item.base_price));
+    row.append($('<td>').text(item.quantity));
+    row.append($('<td>').text(item.priority));
+    row.append($('<td>').text(item.period));
+    tableBody.append(row);
+  });
+}
+
+
+// Function to populate the table with data
+function populateTableExpenses(data) {
+  var tableBody = $('#financeTable2 tbody');
+  // Clear existing rows
+  tableBody.empty();
+
+  // Iterate through received data and append rows to the table
+  data.forEach(function(item) {
+    var row = $('<tr>');
+    row.append($('<td>').text(item.expenseCategory));
+    row.append($('<td>').text(item.description));
+    row.append($('<td>').text(item.base_price));
+    row.append($('<td>').text(item.quantity));
+    row.append($('<td>').text(item.priority));
+    row.append($('<td>').text(item.period));
+    tableBody.append(row);
+  });
+}
+
+
+    function calculateSum(tableSelector) {
+        var sum = 0;
+        $(tableSelector + ' tbody tr').each(function() {
+            var price = parseFloat($(this).find('td:nth-child(3)').text());
+            var quantity = parseFloat($(this).find('td:nth-child(4)').text());
+            sum += isNaN(price) || isNaN(quantity) ? 0 : price * quantity;
+        });
+        return sum;
+    }
+
+
+ function calculateSumByPriority(tableSelector, priority) {
+        var sum = 0;
+        $(tableSelector + ' tbody tr').each(function() {
+            var rowPriority = $(this).find('td:nth-child(5)').text();
+            if (rowPriority === priority) {
+                var price = parseFloat($(this).find('td:nth-child(3)').text());
+                var quantity = parseFloat($(this).find('td:nth-child(4)').text());
+                sum += isNaN(price) || isNaN(quantity) ? 0 : price * quantity;
+            }
+        });
+        return sum;
+    }
+
+
+
+
+// Call the function to fetch planned incomes by budget model name when the page loads
+$(document).ready(function() {
+  // Assuming you have the budget model name available
+  var budgetModelName = "2024"; // Change this to the actual budget model name
+    fetchVremenskiPeriodByBudgetModelName(budgetModelName);
+
+  //fetchPlannedIncomesByBudgetModel(budgetModelName);
+  fetchPlannedExpensesByBudgetModel(budgetModelName);
+  fetchDesiredProfitByBudgetModelName(budgetModelName);
+  fetchNameByBudgetModelName(budgetModelName);
+  fetchStartDateByBudgetModelName(budgetModelName);
+  fetchOcekivanaDobitByBudgetModelName(budgetModelName);
+
+
+});
+
+// Function to make AJAX request to fetch desired profit
+function fetchDesiredProfitByBudgetModelName(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName,
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, set the value of the input field
+      setDesiredProfit(data.desired_profit);
+
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching desired profit:", error);
+    }
+  });
+}
+
+// Function to make AJAX request to fetch desired profit
+function fetchVremenskiPeriodByBudgetModelName(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName,
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, set the value of the input field
+      setVremenskiPeriod(data.period);
+  updateSummaryTable();
+  updateHistogram1('financeTable1', 'financeTable2', $('#vremenski-period').val());
+  updateHistogram2('financeTable1', 'financeTable2', $('#vremenski-period').val());
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching desired profit:", error);
+    }
+  });
+}
+
+function fetchNameByBudgetModelName(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName,
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, set the value of the input field
+      setName(data.name);
+
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching desired profit:", error);
+    }
+  });
+}
+
+function fetchStartDateByBudgetModelName(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName,
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, set the value of the input field
+      setStartDate(data.start_date);
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching desired profit:", error);
+    }
+  });
+}
+
+
+function fetchOcekivanaDobitByBudgetModelName(budgetModelName) {
+  // Make AJAX request
+  $.ajax({
+    url: '/api/budgetmodel/' + budgetModelName,
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      // If request is successful, set the value of the input field
+      setOcekivanaDobit(data.expected_profit);
+
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching desired profit:", error);
+    }
+  });
+}
+
+// Function to set the value of the input field with desired profit
+function setVremenskiPeriod(vremenskiPeriod) {
+  $('#vremenski-period').val(vremenskiPeriod);
+}
+
+function setDesiredProfit(desiredProfit) {
+  $('#zeljena-dobit').val(desiredProfit);
+}
+function setName(name) {
+  $('#budget-name').val(name);
+}
+
+function setStartDate(startDate) {
+  $('#start-date').val(startDate);
+}
+
+
+function setOcekivanaDobit(ocekivanaDobit) {
+  $('#ocekivana-dobit').val(ocekivanaDobit);
+}
+
+function exportHTMLtoPDF() {
+    let htmlElement = document.getElementById('main-content');
+
+    let contentWidth = htmlElement.offsetWidth;
+    let contentHeight = htmlElement.offsetHeight;
+
+    let options = {
+        margin: 10, // Adjust margin as needed
+        format: [contentWidth, contentHeight] // Set PDF size to match content size
+    };
+
+    html2pdf().set(options).from(htmlElement).save('exported_file.pdf');
+}
+
+document.getElementById('downloadBtn3').addEventListener('click', function () {
+            fetch('/pdf/report')
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(new Blob([blob]));
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'report.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(err => console.error('Error downloading PDF:', err));
+        });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registracija</title>
+  <link rel = "stylesheet" type = "text/css" >
+  <script src="jquery.min.js"></script>
+
+  <script src="jquery.validate.min.js"></script>
+
+  <script src="registracija.js"></script>
+  <style>
+    body {
+      background-color: #3EEA58; /* Light green background */
+      font-family: Arial, sans-serif;
+
+    }
+    .container {
+      max-width: 400px; /* Adjust as needed */
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px solid #006600; /* Dark green border */
+      border-radius: 10px;
+      background-color: #ffffff; /* White background */
+    }
+    .login-form {
+      text-align: center;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="submit"],
+    input[type="radio"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #14B82C; /* Dark green submit button */
+      color: #ffffff; /* White text */
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0f8f23; /* Darker green on hover */
+    }
+
+    /* Flexbox styling for radio buttons */
+    .radio-group {
+      display: flex;
+      justify-content: center;
+    }
+    .radio-group label {
+      margin: 0 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="login-form">
+    <h1>Registracija</h1>
+    <form id="registracija">
+      <label for="ime">Ime:</label>
+      <input id="ime" type="text" name="ime" placeholder="Unesite ime" required><br><br>
+
+      <label for="prezime">Prezime:</label>
+      <input id="prezime" type="text" name="prezime" placeholder="Unesite prezime" required><br><br>
+
+      <label for="email">E-mail:</label>
+      <input id="email" type="email" name="email" placeholder="Unesite e-mail" required><br><br>
+
+      <label for="lozinka">Lozinka:</label>
+      <input id="lozinka" type="password" name="lozinka" placeholder="Unesite lozinku" required><br><br>
+
+      <label for="telefon">Broj telefona:</label>
+      <input id="telefon" type="text" name="telefon" placeholder="Unesite broj telefona" required><br><br>
+
+      <label for="datumrodjenja">Datum rodjenja:</label>
+      <input id="datumrodjenja" type="date" name="datum" required><br><br>
+
+      <fieldset>
+        <legend>Registrujte se kao:</legend>
+        <div class="radio-group">
+          <label for="uloga1">Member</label>
+          <input id="uloga1" class="ulogaa" type="radio" name="uloga" value="t">
+          <label for="uloga2">Participant</label>
+          <input id="uloga2" type="radio" name="uloga" value="c" checked>
+          <label for="uloga3">Profesor</label>
+          <input id="uloga3"  type="radio" name="uloga" value="c"   checked="checked" />
+          <br/>
+          <label for="uloga3">Pohadjac obrazovnih programa</label>
+          <input id="uloga4"  type="radio" name="uloga" value="c"   checked="checked" />
+          <br/>
+
+        </div>
+      </fieldset>
+
+      <br>
+      <input type="submit" value="Registruj se">
+
+
+
+
+
+    </form>
+  </div>
+
+
+
+
+  </div>
+
+</body>
+</html>

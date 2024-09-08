@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="pregleda" directorySegmentName="seg_0" id="198D581B-601F-7126-7926-FF7EC2E997D3">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-04-25 15:50:41 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="9AED1557-8942-C55E-FCE6-99346974334B" value="true"/>
+</engineerTo>
+<sourcePk>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</sourcePk>
+<targetPk>74E48689-CE99-C959-4547-CD6ADF01CC46</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>679AE108-5EEE-7851-29B7-A0BAA00AFEAF</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>6FE9E9EA-BCC2-1AB9-E5A7-0E2BA360922C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

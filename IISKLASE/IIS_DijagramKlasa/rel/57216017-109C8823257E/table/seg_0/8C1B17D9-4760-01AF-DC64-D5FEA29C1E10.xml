@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8C1B17D9-4760-01AF-DC64-D5FEA29C1E10" name="ucestvuje_tura">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="UCESNIK_ID" id="2DA34C58-9136-B1C9-61F6-3F2660ABCAEA">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F055D8F4-E1D4-59C8-B4FC-CEBA3EAFA644" referredColumn="2C1387DB-1060-4F61-7FD7-A91B5330A59A"/>
+</associations>
+</Column>
+<Column name="TURA_ID_Tura" id="E9B670DA-5893-F28D-88CB-3960094A682B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>8B7AC74C-2183-F374-4B19-0E63394BA4E0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2BDC08D4-482B-89D9-D80A-8EB6FD626966" referredColumn="583E7B16-0989-D54D-4B61-00E52ADDC640"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AAE4B607-AF5A-FDD8-1FD8-1698C33B9158" name="ucestvuje_tura_PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DA34C58-9136-B1C9-61F6-3F2660ABCAEA"/>
+<colUsage columnID="E9B670DA-5893-F28D-88CB-3960094A682B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03340E62-18A6-FD45-DE29-B4B0657DB15C" name="ucestvuje_tura_UCESNIK_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>1FB73419-9165-8CF3-A18F-B79631B6BA83</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DA34C58-9136-B1C9-61F6-3F2660ABCAEA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97F65BC7-C139-9ED6-1110-D934C57ADD73" name="ucestvuje_tura_TURA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>1FB73419-9165-8CF3-A18F-B79631B6BA83</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9B670DA-5893-F28D-88CB-3960094A682B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

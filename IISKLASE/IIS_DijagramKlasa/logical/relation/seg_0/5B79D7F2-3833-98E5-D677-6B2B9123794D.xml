@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="cuva" directorySegmentName="seg_0" id="5B79D7F2-3833-98E5-D677-6B2B9123794D">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 16:44:47 UTC</createdTime>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<engineerTo>
+<item key="57216017-5617-FAA8-3149-109C8823257E" value="true"/>
+</engineerTo>
+<sourcePk>B526BF8C-C266-DF4B-E7F2-44AEF945ECA6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>679AE108-5EEE-7851-29B7-A0BAA00AFEAF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C2EA7C60-2E2D-FFF2-CB2C-4A7F378A0BF0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Export HTML to PDF</title>
+  <style>
+    #content {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    h1 {
+      color: #007bff;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+<div id="content">
+  <h1>Hello, this will be exported as a PDF!</h1>
+  <p>This is some sample content that will be in the PDF.</p>
+  <table>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+    </tr>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+  </table>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+
+<button id="exportButton">Export to PDF</button>
+
+<script>
+      function exportHTMLtoPDF() {
+         let htmlElement = document.getElementById('content');
+         let options = {
+           margin: 10 // Adjust margin as needed
+         };
+
+         html2pdf().set(options).from(htmlElement).save('exported_file.pdf');
+      }
+
+      document.getElementById('exportButton').addEventListener('click', exportHTMLtoPDF);
+   </script>
+</body>
+</html>

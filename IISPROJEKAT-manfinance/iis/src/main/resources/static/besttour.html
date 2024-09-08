@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Odabir najbolje ture</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css">
+  <script src="jquery.min.js"></script>
+  <script src="jquery.validate.min.js"></script>
+  <script src="besttour.js"></script>
+
+  <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+.sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+            height: 100vh; /* Adjusted height to cover the entire viewport */
+
+            overflow-y: auto; /* Add scroll if content exceeds viewport height */
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+        .submenu {
+            display: none;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .sidebar ul ul li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .sidebar ul ul li a {
+            font-size: 16px;
+            margin-left: 20px;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; /* Add scroll if content exceeds viewport height */
+        }
+        .main-content h3 {
+        	text-align: center;
+            margin-bottom: 30px;
+        }
+        .main-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 45px;
+            margin-top: 45px;
+            width: 100%;
+        }
+        .container {
+            margin-left: 32px;
+            margin-right: 32px;
+        	justify-content: center;
+            margin-bottom: 40px; /* Increased margin between tables */
+            text-align: center;
+            font-size: 14px;
+            max-width: 100%; /* Ensure container stretches to full width */
+            overflow-x: auto; /* Add horizontal scroll if content overflows */
+            height: 200px; /* Increased fixed height for the container */
+            max-height: 100%;
+            overflow-y: auto; /* Add vertical scroll if content overflows */
+        }
+        .container h3 {
+            margin-bottom: 10px; /* Reduced margin */
+            font-size: 16px; /* Reduced font size for headings */
+        }
+
+        .method-container {
+          	margin-left: 35px;
+            margin-bottom: 35px;
+            margin-top: 25px;
+            font-size: 16px;
+
+        }
+       table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px; /* Reduced margin */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            table-layout: fixed; /* Ensures the table fits within the container */
+        }
+        .method-select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 220px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px; /* Reduced padding */
+            text-align: center; /* Center align text */
+            font-size: 12px; /* Reduced font size for table content */
+        }
+
+        th {
+            background-color: #15F187;
+            color: #000000;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+                .container table thead {
+            position: sticky;
+            top: 0;
+            background-color: #15F187;
+            z-index: 1;
+        }
+
+        .container table th {
+            position: sticky;
+            top: 0;
+            background-color: #15F187;
+            z-index: 1;
+            width: calc(50% - 10px); /* Adjust width of tables */
+            max-height: 800px; /* Ensure tables fill container height */
+            overflow-y: auto; /* Add vertical scroll if content overflows */
+        }
+
+        .add-row {
+            cursor: pointer;
+            color: #000000;
+            background-color: #15F187;
+            border: none;
+            padding: 8px 16px; /* Reduced padding */
+            margin-top: 10px; /* Reduced margin */
+            border-radius: 5px;
+            font-size: 14px; /* Reduced font size */
+        }
+
+        .add-row:hover {
+            background-color: #12DB7A;
+        }
+
+        .delete-row {
+            cursor: pointer;
+            color: #fff;
+            background-color: #f44336;
+            border: none;
+            padding: 6px 10px; /* Reduced padding */
+            border-radius: 3px;
+            font-size: 12px; /* Reduced font size */
+            transition: background-color 0.3s ease;
+        }
+        .save-row {
+            cursor: pointer;
+            color: #000000;
+            background-color: #15F187;
+            border: none;
+            padding: 6px 10px; /* Reduced padding */
+            border-radius: 3px;
+            font-size: 12px; /* Reduced font size */
+            transition: background-color 0.3s ease;
+        }
+        .delete-row:hover {
+            background-color: #d32f2f;
+        }
+        .save-row:hover {
+            background-color: #12DB7A;
+        }
+        .category-select {
+            width: 60px; /* Adjust as needed */
+        }
+        .criteria-header {
+    font-weight: bold;
+    background-color: #15F187; /* Same color as table header */
+}
+    .criteria-input {
+            width: 45px; /* Adjust as needed */
+        }
+        .rank-races {
+            cursor: pointer;
+            color: #000000;
+            width: 120px;
+            height: 48px;
+            text-align: center;
+            justify-content: center; /* Not required for button elements */
+            font-weight: bold;
+            background-color: #15F187;
+            border: none;
+            padding: 8px 16px;
+            margin: 35px auto 0; /* Centered vertically, 0 margin at top, auto margin horizontally */
+            border-radius: 5px;
+            font-size: 18px;
+            display: block; /* Ensures button behaves like a block-level element */
+        }
+
+        .rank-races:hover {
+            background-color: #12DB7A;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Planinarsko društvo "Vidikovac"</h2>
+  <ul>
+    <li><a href="financemanager.html">Početna</a></li>
+    <li>
+      <a href="#" class="menu-toggle">Prihodi <i class="fas fa-chevron-down"></i></a>
+      <ul class="submenu">
+        <li><a href="allincomes.html">Pregled svih prihoda</a></li>
+        <li><a href="addincome.html">Unos novog prihoda</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="menu-toggle">Rashodi <i class="fas fa-chevron-down"></i></a>
+      <ul class="submenu">
+        <li><a href="allexpenses.html">Pregled svih rashoda</a></li>
+        <li><a href="addexpense.html">Unos novog rashoda</a></li>
+      </ul>
+    </li>
+    <li><a href="budgetmodel.html">Kreiraj model budžeta</a></li>
+    <li><a href="financereports.html">Finansijski izveštaji</a></li>
+    <li><a href="besttour.html">Odabir najboljih tura</a></li>
+    <li><a href="profil.html">Vaš profil</a></li>
+    <li><a href="#">Pomoć</a></li>
+    <li><a href="login.html">Odjavi se</a></li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <div class="main-heading">Odabir najbolje ture</div>
+  <div class="method-container">
+    <label for="method" class="method-label">Odaberite metodu rangiranja:</label>
+    <select id="method" name="method" class="method-select">
+      <option value="metoda1">MINIMAX metoda</option>
+      <option value="metoda2">MAXIMAX metoda</option>
+      <option value="metoda3">Metoda jednostavnih aditivnih težina</option>
+      <option value="metoda4">Metoda hijerarhijskih aditivnih težina</option>
+    </select>
+  </div>
+  <h3>Unesite podatke o alternativnim trkama:</h3>
+
+  <div class="container">
+    <table id="races">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Dužina staze (km)</th>
+        <th>Težina staze</th>
+        <th>Pristupačnost lokacije</th>
+        <th>Prirodne lepote</th>
+        <th>Sigurnost na stazi</th>
+        <th>Kapacitet trke</th>
+        <th>Cena trke (RSD)</th>
+        <th>Obriši</th>
+        <th>Sačuvaj</th>
+        <th>Rank</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="fixed-row">
+        <td class="criteria-header">Tip kriterijuma</td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td><select class="criteria-select"><option value="max">Max</option><option value="min">Min</option></select></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="fixed-row" id="weights-row">
+        <td class="criteria-header">Težine</td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td><input type="number" class="criteria-input" step="0.01" min="0" max="1"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <button class="add-row" data-table="#races">Dodaj još trka</button>
+  </div>
+  <button class="rank-races" id="rankRacesBtn">Rangiraj</button>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $('.menu-toggle').click(function(e){
+            e.preventDefault();
+            $(this).next('.submenu').toggleClass('active');
+        });
+
+function toggleWeightsRoww() {
+        var selectedMethod = $('#method').val();
+        var weightsRow = $('.fixed-row#weights-row');
+
+        if (selectedMethod === 'metoda3' || selectedMethod === 'metoda4') {
+            weightsRow.show();
+        } else {
+            weightsRow.hide();
+        }
+    }
+
+    toggleWeightsRoww();
+
+    $('#method').change(function() {
+        toggleWeightsRoww();
+    });
+
+function addRow(tableID, columns) {
+  var table = $(tableID);
+  var newRow = $('<tr>');
+
+  columns.forEach(function(column) {
+    if (column === 'Težina staze' || column === "Pristupačnost lokacije" || column === "Prirodne lepote" || column === "Sigurnost na stazi") {
+      newRow.append(`
+        <td>
+          <select class="category-select">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="9">9</option>
+          </select>
+        </td>
+      `);
+    } else if (column === '') {
+      newRow.append('<td contenteditable="false"></td>');
+    } else {
+      newRow.append('<td contenteditable="true">0</td>');
+    }
+  });
+
+
+      newRow.append('<td><button class="delete-row">Obriši</button></td>');
+      newRow.append('<td><button class="save-row">Sačuvaj</button></td>');
+      newRow.append('<td class="rank"></td>');
+
+      table.find('tbody').append(newRow);
+    }
+
+function getCriterionTypes() {
+    var types = [];
+    $('#races .fixed-row:eq(0) .criteria-select').each(function() {
+        types.push($(this).val());
+    });
+    return types;
+}
+
+function calculateMaximinDecision(altTours) {
+    var criteria = ['length', 'difficulty', 'loc_accessibility', 'nature_beauty', 'safety', 'capacity', 'price'];
+    var criterionTypes = getCriterionTypes();  // Get the criterion types
+
+    // Find the maximum value for each criterion
+    var maxValues = {};
+    criteria.forEach(function(criterion) {
+        maxValues[criterion] = Math.max(...altTours.map(tour => tour[criterion]));
+    });
+
+    // Find the minimum value for each criterion
+    var minValues = {};
+    criteria.forEach(function(criterion) {
+        minValues[criterion] = Math.min(...altTours.map(tour => tour[criterion]));
+    });
+
+    // Calculate the minimum normalized value for each tour and store original index
+    altTours.forEach(function(tour, index) {
+        tour.originalIndex = index;  // Store the original index
+        var minNormalizedValue = Infinity;
+        criteria.forEach(function(criterion, idx) {
+            var normalizedValue;
+            if (criterionTypes[idx] === 'max') {
+                normalizedValue = tour[criterion] / maxValues[criterion];
+            } else {
+                normalizedValue = minValues[criterion] / tour[criterion];
+            }
+            if (normalizedValue < minNormalizedValue) {
+                minNormalizedValue = normalizedValue;
+            }
+        });
+        tour.minNormalizedValue = minNormalizedValue;
+    });
+
+    // Sort tours by their minNormalizedValue in descending order
+    altTours.sort((a, b) => b.minNormalizedValue - a.minNormalizedValue);
+
+    // Assign ranks to tours based on their sorted order
+    altTours.forEach(function(tour, index) {
+        tour.rank = index + 1;
+    });
+
+    return altTours;
+}
+
+function calculateMaximaxDecision(altTours) {
+    var criteria = ['length', 'difficulty', 'loc_accessibility', 'nature_beauty', 'safety', 'capacity', 'price'];
+    var criterionTypes = getCriterionTypes();  // Get the criterion types
+
+    // Find the maximum value for each criterion
+    var maxValues = {};
+    criteria.forEach(function(criterion) {
+        maxValues[criterion] = Math.max(...altTours.map(tour => tour[criterion]));
+    });
+
+    // Find the minimum value for each criterion
+    var minValues = {};
+    criteria.forEach(function(criterion) {
+        minValues[criterion] = Math.min(...altTours.map(tour => tour[criterion]));
+    });
+
+    // Calculate the maximum normalized value for each tour and store original index
+    altTours.forEach(function(tour, index) {
+        tour.originalIndex = index;  // Store the original index
+        var maxNormalizedValue = -Infinity;
+        criteria.forEach(function(criterion, idx) {
+            var normalizedValue;
+            if (criterionTypes[idx] === 'max') {
+                normalizedValue = tour[criterion] / maxValues[criterion];
+            } else {
+                normalizedValue = minValues[criterion] / tour[criterion];
+            }
+            if (normalizedValue > maxNormalizedValue) {
+                maxNormalizedValue = normalizedValue;
+            }
+        });
+        tour.maxNormalizedValue = maxNormalizedValue;
+    });
+
+    // Sort tours by their maxNormalizedValue in descending order
+    altTours.sort((a, b) => b.maxNormalizedValue - a.maxNormalizedValue);
+
+    // Assign ranks to tours based on their sorted order
+    altTours.forEach(function(tour, index) {
+        tour.rank = index + 1;
+    });
+
+    return altTours;
+}
+
+
+$('#rankRacesBtn').on('click', function() {
+    var selectedMethod = $('#method').val();
+    var altTours = [];
+
+    $('#races tbody tr:not(.fixed-row)').each(function() {
+      var altTour = {
+          "length": $(this).closest('tr').find('td:eq(1)').text(),
+          "difficulty": $(this).closest('tr').find('td:eq(2) select').val(),
+          "loc_accessibility": $(this).closest('tr').find('td:eq(3) select').val(),
+          "nature_beauty": $(this).closest('tr').find('td:eq(4) select').val(),
+          "safety": $(this).closest('tr').find('td:eq(5) select').val(),
+          "capacity": $(this).closest('tr').find('td:eq(6)').text(),
+          "price": $(this).closest('tr').find('td:eq(7)').text()
+      };
+        altTours.push(altTour);
+    });
+
+    if (altTours.length < 2) {
+        alert("Greška! Mora postojati najmanje 2 ture u tabeli.");
+        return;
+    }
+
+    var rankedTours;
+
+    if (selectedMethod === 'metoda1') {
+        rankedTours = calculateMaximinDecision(altTours);
+    } else if (selectedMethod === 'metoda2') {
+        rankedTours = calculateMaximaxDecision(altTours);
+    } else {
+        alert("Greška!");
+        return;
+    }
+
+    // Clear previous ranks
+    $('#races tbody tr:not(.fixed-row) td.rank').text('');
+
+    // Display ranks in the "Rank" column using the original index
+    rankedTours.forEach(function(tour) {
+        $('#races tbody tr:not(.fixed-row)').eq(tour.originalIndex).find('td.rank').text(tour.rank);
+    });
+
+    alert("Tours ranked successfully!");
+});
+
+
+      $('#races').on('click', '.save-row', function() {
+
+      var altRace = {
+          "length": $(this).closest('tr').find('td:eq(1)').text(),
+          "difficulty": $(this).closest('tr').find('td:eq(2) select').val(),
+          "loc_accessibility": $(this).closest('tr').find('td:eq(3) select').val(),
+          "nature_beauty": $(this).closest('tr').find('td:eq(4) select').val(),
+          "safety": $(this).closest('tr').find('td:eq(5) select').val(),
+          "capacity": $(this).closest('tr').find('td:eq(6)').text(),
+          "price": $(this).closest('tr').find('td:eq(7)').text()
+      };
+
+
+
+    var isValid = true;
+
+    if (isValid) {
+        var role = localStorage.getItem('role');
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8011/api/altrace/add?role=" + role,
+            contentType: "application/json",
+            data: JSON.stringify(altRace),
+            success: function(response) {
+                console.log("Alt race saved successfully:", response);
+                alert("Uspešno ste sačuvali alternativnu trku!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error saving alt race:", error);
+                alert("Greška! " + error);
+            }
+        });
+    } else {
+        // Handle invalid data here or remove this else block if not needed
+    }
+});
+
+
+    $('.add-row').click(function() {
+      var columns = ['', 'Dužina staze (km)', 'Težina staze', 'Pristupačnost lokacije', 'Prirodne lepote', 'Sigurnost na stazi', 'Kapacitet trke', 'Cena trke (RSD)'];
+      addRow('#races', columns);
+    });
+
+        $(document).on('click', '.delete-row', function() {
+            $(this).closest('tr').remove();
+        });
+    addRow('#races', ['', 'Dužina staze (km)', 'Težina staze', 'Pristupačnost lokacije', 'Prirodne lepote', 'Sigurnost na stazi', 'Kapacitet trke', 'Cena trke (RSD)']);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreiranje takmicenja</title>
+    <link rel = "stylesheet" type = "text/css" >
+    <script src="jquery.min.js"></script>
+
+    <script src="jquery.validate.min.js"></script>
+
+    <script src="createrace.js"></script>
+    <style>
+        body {
+            background-color: #3EEA58; /* Light green background */
+            font-family: Arial, sans-serif;
+
+        }
+        .container {
+            max-width: 400px; /* Adjust as needed */
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #006600; /* Dark green border */
+            border-radius: 10px;
+            background-color: #ffffff; /* White background */
+        }
+        .login-form {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="submit"],
+        input[type="number"],
+        input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #14B82C; /* Dark green submit button */
+            color: #ffffff; /* White text */
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0f8f23; /* Darker green on hover */
+        }
+
+        /* Flexbox styling for radio buttons */
+        .radio-group {
+            display: flex;
+            justify-content: center;
+        }
+        .radio-group label {
+            margin: 0 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="login-form">
+        <h1>Kreiranje takmicenja</h1>
+        <form id="createrace">
+            <label for="type">Vrsta:</label>
+            <input id="type" type="text" name="type" placeholder="Unesite tip takmicenja" required><br><br>
+
+            <label for="description">Opis:</label>
+            <input id="description" type="text" name="description" placeholder="Unesite opis" required><br><br>
+
+            <label for="location">Lokacija:</label>
+            <input id="location" type="text" name="location" placeholder="Unesite lokaciju" required><br><br>
+
+            <label for="numberAvailable">Broj slobodnih mesta:</label>
+            <input id="numberAvailable" type="number" name="numberAvailable" placeholder="Unesite broj slobodnih mesta" required><br><br>
+
+            <label for="dateTime">Datum:</label>
+            <input id="dateTime" type="datetime-local" name="dateTime" required><br><br>
+
+            <br>
+            <input type="submit" value="Potvrdi">
+
+        </form>
+    </div>
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="70020457-3EDB-F599-08AF-BC972360DC11" containerWithKeyObject="2FA81482-3691-0C35-6398-D81EE4711857" localFKIndex="33FB4119-6903-1ECA-121D-CF4ADDBEC6EB" name="RASHOD_MENADZER_FINANS_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>60D7822F-A3BA-5640-AB0B-01784A57A4B4</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>MENADZER_FINANS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E86DC696-1D65-F866-065F-A2A8557DDE65</referredTableID>
+<keyObject>EE2BDE38-6AF8-0263-EEF4-317816CA4B6C</keyObject>
+<referredKeyID>EE2BDE38-6AF8-0263-EEF4-317816CA4B6C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

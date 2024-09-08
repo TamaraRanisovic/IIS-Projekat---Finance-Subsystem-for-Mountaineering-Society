@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9E35080A-7AC9-C7FE-E063-E95C93340573" containerWithKeyObject="FB327661-44CD-524F-28CA-0737AC2C3567" localFKIndex="556175A1-CC47-074F-49C3-58D9F7AF0D0D" name="cini_model_prihod_PLAN_PRIHOD_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>51B61346-19A5-507C-AA77-1D316890C9E1</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>PLAN_PRIHOD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1941C0DE-25F9-92C3-BC68-87203C4313DB</referredTableID>
+<keyObject>7440440B-B125-B060-B3FD-FCF3E92BA9A1</keyObject>
+<referredKeyID>7440440B-B125-B060-B3FD-FCF3E92BA9A1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_plan_prihod</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

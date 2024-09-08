@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D04AAA35-EC92-D4CF-C256-F27DBBF4DCFA" containerWithKeyObject="FB327661-44CD-524F-28CA-0737AC2C3567" localFKIndex="90BC173D-94A3-A1D0-80F3-CC2F934A7AA0" name="cini_model_prihod_MODEL_BUDZETA_FK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-05-16 15:09:27 UTC</createdTime>
+<generatorID>51B61346-19A5-507C-AA77-1D316890C9E1</generatorID>
+<ownerDesignName>IIS_DijagramKlasa</ownerDesignName>
+<referredTableLongName>MODEL_BUDZETA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>741285A3-BF11-F2C0-D9C3-BF6468BE30D2</referredTableID>
+<keyObject>CAF9C175-333F-0FB1-7174-896F42687FC3</keyObject>
+<referredKeyID>CAF9C175-333F-0FB1-7174-896F42687FC3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_model_budzet</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dobrodosli na pocetnu stranicu menadzera finansija</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="financemanager.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            justify-content: center; /* Center thumbnails horizontally */
+        }
+
+        .thumbnail {
+            flex-basis: calc(40% - 20px); /* 50% width for each thumbnail with spacing */
+            margin-bottom: 70px;
+            text-align: left; /* Align text to the left */
+            position: relative; /* Ensure proper positioning of the anchor */
+            height: 180px; /* Set fixed height for thumbnails */
+        }
+
+        .thumbnail a {
+            display: block;
+            text-decoration: none; /* Remove underline from anchor */
+            height: 100%; /* Ensure anchor takes full height of thumbnail */
+        }
+
+        .thumbnail img {
+            width: 85%;
+            height: 100%; /* Ensure image takes full height of thumbnail */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            object-fit: cover; /* Ensure images cover the entire container */
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.05);
+        }
+
+        .thumbnail .description {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 0 0 10px 10px; /* Add border-radius for rounded corners */
+            transition: transform 0.3s; /* Apply the same transition as the image */
+        }
+
+        .thumbnail:hover .description {
+            transform: scale(1.05);
+        }
+                .submenu {
+            display: none;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .sidebar ul ul li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+        }
+
+        .sidebar ul ul li a {
+            font-size: 16px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <h2>Planinarsko društvo "Vidikovac"</h2>
+    <ul>
+        <li><a href="financemanager.html">Početna</a></li>
+        <li>
+            <a href="#" class="menu-toggle">Prihodi <i class="fas fa-chevron-down"></i></a>
+            <ul class="submenu">
+                <li><a href="allincomes.html">Pregled svih prihoda</a></li>
+                <li><a href="addincome.html">Unos novog prihoda</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-toggle">Rashodi <i class="fas fa-chevron-down"></i></a>
+            <ul class="submenu">
+                <li><a href="allexpenses.html">Pregled svih rashoda</a></li>
+                <li><a href="addexpense.html">Unos novog rashoda</a></li>
+            </ul>
+        </li>
+        <li><a href="budgetmodel.html">Kreiraj model budžeta</a></li>
+        <li><a href="financereports.html">Finansijski izveštaji</a></li>
+        <li><a href="besttour.html">Odabir najboljih tura</a></li>
+        <li><a href="profil.html">Vaš profil</a></li>
+        <li><a href="#">Pomoć</a></li>
+        <li><a href="login.html">Odjavi se</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <div class="container">
+        <h1>Dobrodošli, menadžer finansija</h1>
+
+        <div class="thumbnails">
+            <div class="thumbnail">
+                <a href="incomesexpenses.html">
+                    <img src="images/incomes.jpg" alt="Pregled raspoloživih sredstava i svih prihoda i rashoda društva">
+                    <div class="description">Pregled raspoloživih sredstava i svih prihoda i rashoda društva</div>
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="financereports.html">
+                    <img src="images/reports.jpeg" alt="Finansijski izveštaji">
+                    <div class="description">Finansijski izveštaji</div>
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="budgetmodel.html">
+                    <img src="images/budgetmodel.png" alt="Kreiraj model budžeta">
+                    <div class="description">Kreiraj model budžeta</div>
+                </a>
+            </div>
+            <div class="thumbnail">
+                <a href="besttour.html">
+                    <img src="images/besttour.jpeg" alt="Odabir najbolje ture">
+                    <div class="description">Odabir najbolje ture</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.menu-toggle').click(function(e){
+            e.preventDefault();
+            $(this).next('.submenu').toggleClass('active');
+        });
+    });
+</script>
+</body>
+</html>

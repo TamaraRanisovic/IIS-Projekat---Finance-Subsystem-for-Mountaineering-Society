@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Tour Details</title>
+    <link rel = "stylesheet" type = "text/css">
+  <script src="jquery.min.js"></script>
+  <script src="jquery.validate.min.js"></script>
+  <script src = "detprikaztureHom.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container1 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container2 {
+            text-align: center;
+            width: 1000px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: space-between; 
+        }
+        .container3 {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .tour-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .tour-description {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .itinerary {
+            margin-bottom: 20px;
+        }
+        .difficulty {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        .details {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .photo-gallery {
+            margin-bottom: 20px;
+        }
+        .photo-gallery img {
+            width: 150px;
+            height: 100px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }       
+        .diffcard {
+            border: 1px solid #cccccc;
+        /* background-color: yellow;    */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .diffcard:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }     
+
+        .button-container { /* Added */
+            display: flex;
+    justify-content: center;
+    align-items: center;
+        }   
+        .button {
+            width: 120px;
+            height: 60px;
+            padding: 10px 15px; /* Modified */
+            margin-right: 10px; /* Added */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            
+        }
+        .button:last-child {
+            margin-right: 0; /* Added */
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        
+        input[type="submit"],
+        input[type="button"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #14B82C;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #0f8f23;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <h1>Homoljske planine - Mali i Veliki Vukan 06.04.2024.</h1>
+        <img src="slike/homolj.webp" alt="Hiking Tour 1" class="tour-image">
+        <h2>Opis ture</h2> 
+        <div id="editableContainer" contenteditable="true">
+            <p class="tour-description"> &nbsp;&nbsp;&nbsp;&nbsp; Homoljske planine se nalaze u Istočnoj Srbiji i pripadaju grupi Karpatsko-balkanskih planina. 
+                Sastoje se pretežno od škriljaca i krečnjaka. Prostiru se pravcem zapad-istok i smeštene su između Zviške kotline na severu i Žagubičke kotline na jugu, 
+                kao i između Mlavske kotline na zapadu i izvorišnih delova Peka na istoku. Prosečna visina je oko 900 metara, a najviša tačka iznosi 962 metara.
+                Planine su bogate gustom šumom i mnogim rečnim izvorima, koji se spuštaju sa padina.
+            </p>
+        </div>
+     <!--   <textarea id="editableTextBox" rows="30" cols="100"> </textarea> -->
+        
+        <h2>Tačke od interesa</h2>
+        <ul class="itinerary">
+            <div id="editableContainer" contenteditable="true">
+                <li> <strong>Planinarski dom na Bukovu: </strong> Planinarski dom pruža udoban smeštaj i informacije o stazama u okolini.</li>
+                <li> <strong>Bukovski vrh:</strong> Ovo je jedan od najviših vrhova u Homoljskim planinama sa spektakularnim pogledom na okolinu. Možete se popeti do vrha i uživati u panoramskom pogledu.</li>
+                <li> <strong>Vodopad Veliki buk:</strong> Ovaj prelep vodopad nalazi se u blizini sela Ravni Topolovac. Idealno je mesto za osveženje i relaksaciju tokom planinarenja.</li>
+                <li> <strong>Manastir Manasija:</strong> Nakon napornog planinarenja, poseta Manastiru Manasija može biti umirujuća. Ovaj manastir, poznat i kao Resava, jedan je od najvažnijih manastira u Srbiji.</li>
+                <li> <strong>Spomenik kulture:</strong> Crkva u Vitkovcu: Ova crkva, smeštena u selu Vitkovac, predstavlja kulturno blago Homolja. Arhitektonski, crkva je izuzetno zanimljiva i vredna posete.</li>
+                <li> <strong>Gornjak:</strong> Ovaj planinski vrh nudi još jedan izvanredan pogled na okolinu. Idealno je mesto za planinarenje i uživanje u prirodi.</li>
+    
+            </div>
+        </ul>
+        <div class = "container2">
+            <div class = "card">
+                <h2>Datum održavanja</h2>
+            <div id="editableContainer" contenteditable="true">
+                <p class="details">Date: June 15, 2024</p>
+            </div>
+            </div>
+        
+            <div class = "card">
+                <h2>Vreme polaska</h2>
+            <div id="editableContainer" contenteditable="true">
+                <p class="details">07:00 časova</p>
+            </div>
+            </div>
+        </div>
+    
+        <div class = "container2">
+            <div class = "card">
+                <h2>Kotizacija</h2>
+            <div id="editableContainer" contenteditable="true">
+                <p class = "details">1000 dinara</p>
+            </div>
+            </div>
+
+            <div class = "diffcard">
+                <h2>Težina ture</h2>
+            <div id="editableContainer" contenteditable="true">
+                <p class = "details">Srednje teško</p> <!-- bolje tekst nego brojevi -->
+            </div>
+            </div>
+        </div>
+
+        
+            <div class="container3">
+                <div class="card">
+                    <h2>Vodič:</h2>
+                <div id="editableContainer" contenteditable="true">
+                    <p class="details">Vukašin Lupurović</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class = "container3">
+            <div class = "card">
+                <h2>Oprema:</h2>
+            <div id="editableContainer" contenteditable="true">
+                <p class = "details">hbsadkjfhskajhfkjsahfkjlashf</p>
+            </div>
+            </div>
+        </div>
+
+        
+
+        <div class = "container3">
+            <div class = "card">
+                <h2>Rok za prijavu i uplatu</h2>
+                <div class = "container3">   
+                    <div class = "card">
+                         <h2>Rok za prijavu:</h2>
+                         <div id="editableContainer" contenteditable="true">
+                            <p class="details">29.03.2024.</p>
+                        </div>
+                        </div>
+
+                        <div class = "card">
+                            <h2>Rok za uplatu:</h2>                            
+                        <div id="editableContainer" contenteditable="true">
+                            <p class="details">27.03.2024.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+        <!--
+        <script>
+            // Function to retrieve and display editable content
+            function getEditableContent() {
+                var editableContent = document.getElementById("editableContainer").innerHTML;
+                document.getElementById("editableBox").value = editableContent;
+            }
+        
+            // Call the function when the page loads
+            window.onload = getEditableContent;
+        </script>
+        
+        Editable Text Box 
+        <textarea id="editableBox" rows="10" cols="50" style="display: none;"></textarea>
+
+    -->
+
+
+
+
+
+        <div class="button-container">
+            <button class="button" id="lista">Lista prijavljenih učesnika</button>
+            <input type="submit" value="Izmeni podatke">
+        </div>
+    </div>
+</body>
+</html>

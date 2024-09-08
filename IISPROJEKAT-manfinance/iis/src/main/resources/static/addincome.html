@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unesi novi prihod</title>
+  <link rel="stylesheet" type="text/css">
+  <script src="jquery.min.js"></script>
+  <script src="jquery.validate.min.js"></script>
+  <script src="addincome.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .addincome {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="datetime-local"],
+    input[type="button"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    select[type="text"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"],
+    input[type="button"] {
+      background-color: #14B82C;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover,
+    input[type="button"]:hover {
+      background-color: #0f8f23;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .smaller-font {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="addincome">
+  <h1>Unesi novi prihod</h1>
+  <form id="income">
+    <label for="incomeSource">Izvor prihoda</label>
+    <input type="text" id="incomeSource" name="incomeSource" required>
+
+    <label for="description">Opis</label>
+    <input type="text" id="description" name="description" required>
+
+    <label for="amount">Iznos</label>
+    <input type="number" id="amount" name="amount" required>
+
+
+
+    <label for="incomeDateTime">Datum i vreme</label>
+    <input type="datetime-local" id="incomeDateTime" name="incomeDateTime" required>
+    <label class="smaller-font">
+      <input type="checkbox" id="currentDateTimeCheckbox">
+      Postavi trenutni datum i vreme
+    </label>
+    <br>
+    <label for="incomeCategory">Kategorija prihoda</label>
+    <select type="text" id="incomeCategory" name="incomeCategory" required>
+      <option type="text" value="">Odaberite kategoriju</option>
+      <option value="MEMBERSHIPFEE">Članarina</option>
+      <option value="RACECOMPETITIONFEE">Kotizacija za trku ili takmičenje</option>
+      <option value="EDPROGRAMFEE">Uplata za obrazovni program</option>
+      <option value="OTHER">Ostalo</option>
+    </select>
+
+    <div class="button-container">
+      <input type="button" value="Nazad" onclick="window.history.back()">
+      <input id="save" type="button" value="Sačuvaj">
+    </div>
+  </form>
+</div>
+<script>
+  document.getElementById('currentDateTimeCheckbox').addEventListener('change', function() {
+    var currentDateTimeCheckbox = document.getElementById('currentDateTimeCheckbox');
+    var incomeDateTimeInput = document.getElementById('incomeDateTime');
+
+    if (currentDateTimeCheckbox.checked) {
+      var now = new Date();
+      var formattedDateTime = now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2) + 'T' + ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2);
+      incomeDateTimeInput.value = formattedDateTime;
+      incomeDateTimeInput.disabled = true;
+    } else {
+      incomeDateTimeInput.value = '';
+      incomeDateTimeInput.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

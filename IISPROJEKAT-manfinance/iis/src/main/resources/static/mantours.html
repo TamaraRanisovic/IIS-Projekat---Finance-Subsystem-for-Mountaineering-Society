@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dobrodosli na pocetnu stranicu menadžera tura</title>
+  <link rel = "stylesheet" type = "text/css">
+  <script src="jquery.min.js"></script>
+  <script src="jquery.validate.min.js"></script>
+  <script src = "mantours.js"></script>
+  <style>
+        body {
+            background-image: url('slike/test123.png');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-attachment: fixed; 
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button#kreiraj {
+            background-color: #14B82C;
+            color: #fff;
+        }
+
+        button#kreiraj:hover {
+            background-color: #0f8f23;
+        }
+
+        button#pregled {
+            background-color: #14B82C;
+            color: #fff;
+        }
+
+        button#pregled:hover {
+            background-color: #0f8f23;
+        }
+
+        button#arhivirane {
+            background-color: #14B82C;
+            color: #fff;
+        }
+
+        button#arhivirane:hover {
+            background-color: #0f8f23;
+        }
+
+        button#logout {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        button#logout:hover {
+            background-color: #c82333;
+        }
+
+    </style>
+</head>
+<body class="korisnik">
+<div class="container">
+  <h1>Dobrodošli na početnu stranicu menadzera tura</h1>
+
+  <button type="button" id="kreiraj">Kreiraj novu turu</button>
+  <button type="button" id="pregled">Pregled svih raspoloživih tura</button>
+  <button type="button" id="arhivirane">Arhivirane ture</button>
+  <button type="button" id="logout">Odjavi se</button>
+</div>
+</body>
+</html>
